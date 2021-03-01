@@ -1,15 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&family=Pacifico&family=Press+Start+2P&display=swap');
-:root{
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');:root{
 
     --negro: #000000;
     --blanco: #fff;
-    --importante: #320D6D;
-    --explicacion: #0075A2;
+    --importante:#0075A2 ;
+    --explicacion: #320D6D;
     --secundario1:rgb(36, 41, 46);
     --secundario: rgba(0,0,0,0.5);
     --colorprinicipal: #adff2f;
     --principal:#9acd32;
-    --titulos: 'Press Start 2P', cursive;
+    --titulos:'Josefin Sans', sans-serif;
     --cruba: 'Pacifico', cursive;
     --general: 'Nunito', sans-serif;
 
@@ -56,6 +56,12 @@ html{
   a{
     text-decoration: none;
     color: white;
+  }
+
+  p{
+    line-height: 3rem;
+    font-size: 2rem;
+    padding: 0  4rem;
   }
   /* Titulo Principal */
 
@@ -126,7 +132,7 @@ html{
 
 .pie__contenido{
     color: var(--blanco);
-    text-align: center;
+    text-align: center!important;
     font-size: 2rem;
 }
 
