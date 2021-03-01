@@ -3,9 +3,12 @@
 
     --negro: #000000;
     --blanco: #fff;
+    --importante: #320D6D;
+    --explicacion: #0075A2;
     --secundario1:rgb(36, 41, 46);
     --secundario: rgba(0,0,0,0.5);
     --colorprinicipal: #adff2f;
+    --principal:#9acd32;
     --titulos: 'Press Start 2P', cursive;
     --cruba: 'Pacifico', cursive;
     --general: 'Nunito', sans-serif;
@@ -50,6 +53,10 @@ html{
       font-size: 2.7rem;
   }
 
+  a{
+    text-decoration: none;
+    color: white;
+  }
   /* Titulo Principal */
 
   .prinicpal__titulo{
@@ -64,7 +71,6 @@ html{
   .seccion{
         margin: 3rem auto;
       width: 100%;
-      height: 100rem;
       background-color: var(--blanco);
       border-radius: 1rem ;
       box-shadow: 0px 0px 15px 0px rgba(255,255,255,1);
@@ -79,6 +85,7 @@ html{
       
   }
 
+
   .seccion__titulo{
       color: var(--negro);
   }
@@ -87,11 +94,32 @@ html{
     display: flex;
     justify-content: center;
     column-gap: 2rem;
+    padding-bottom: 3rem;
   }
 
-  .seccion__boton{
-    background-color: yellowgreen;
-    border: ;
+  .boton{
+    background-color: var(--principal);
+    border: 1rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 30%;
+    text-align: center;
+
+  }
+
+  .boton:hover{
+    transition: 1s;
+    background-color: var(--negro);
+  }
+
+
+  .boton--importante{
+    background-color: var(--importante);
+  }
+
+  .boton--md{
+    background-color: var(--explicacion);
+
   }
 
   /* F o o t e r */
@@ -103,7 +131,6 @@ html{
 }
 
   .Cruba{
-      text-decoration: none;
       color: var(--colorprinicipal);
       font-family: var(--cruba);
       font-size: 3rem;
