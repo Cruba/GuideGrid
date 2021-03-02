@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid</title>
+    <title>CSS FlexBox.</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
     <link href="css/prism.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
 
         <div class="seccion_contenido">
             <h3>Dos Columnas Iguales</h3>
-            <p>En este patrón de diseño se tienen dos columnas del mismo tamaño, generalmente para computadoras o tablets, en movil toma una sola columna.</p>
+            <p>para lograr dos columnas con flexblox, se realiza el siguiente procedimiento.</p>
             <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
 
             <h4>Codigo en HTML</h4>
@@ -48,44 +48,92 @@
     </article>
 </div></script></code></pre>
 
+
     <h4>
         codigo CSS
     </h4>
 
-    <pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
-            max-width: 1200px;
-            width: 95%;
-            margin: 0 auto;
+    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+        .dos-columnas{
+            display: flex; /* Da acceso a todas las propiedades de flexbox */
+            justify-content: space-between;
         }
-        @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
-            .dos-columnas{ /* elemento padre */
-                display: grid;
-                grid-template-columns: 50% 50%;
-                column-gap: 5rem; /* define el tamaño de separación entre columnas*/
-            }
-        }</script></code></pre>
+    
+        .entrada-blog{
+            flex-basis: calc(50% - 1rem); /* toma el 50% menos un espacio de rem */
+        }
+    }</script></code></pre>
+    <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup"> display: flex;</script></code> muestra por default todos los elementos de izquierda a derecha</p>
 
-        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code> nos ofrece el acceso a propiedades 
-        exclusivas de CSS grid.</p>
 
-        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code> toma el porcentaje total dado por el selector  <code class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code> y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas distintas:</p>
+        <p>con el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> le indicamos el tamaño y la separación que va tomar. </p>
 
-        <pre><code class="language-css"><script type="text/plain" class="language-markup">{
-grid-template-columns: 50% 50%; /* toma el tamaño dado por los porcentajes*/
-grid-template-columns: repeat(2, 50%); /* indica dos columnas del 50%*/
-grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % total*/
-}</script></code></pre>
+        <p>una alternativa es utiliar el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 calc(50% - 1rem); </script></code></p>
+      
+        <p>O se puede utilizar <code class="language-css"><script type="text/plain" class="language-markup"> gap: 1rem;</script></code>directamente en el elemento padre, pero la desventaje es que no tiene soporte en todos los navegadores, al ser mas nueva.</p>
+
 
 
 
             <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html">Ejemplo</a>
+                <a class="boton" href="patrones/02-2columnas_iguales_flexbox/index.html">Ejemplo</a>
             </div> <!-- seccion -->
         <div class="seccion__contenido">
+
             <h3>Tres Columnas Iguales</h3>
+            <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
+
+            <h4>Codigo en HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen1.jpg">
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen2.jpg">
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen3.jpg">
+
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+</div></script></code></pre>
+            
+                <h4>
+                    codigo CSS
+                </h4>
+            
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+    .tres-columnas{
+        display: flex; 
+        justify-content: space-between;
+    }
+    .entrada-blog{
+        flex: 0 0 calc(33.33% - 1rem);
+    }
+}</script></code></pre>
+
+<h4>Alternativa</h4>
+
+<p>el elemeneto <code class="language-css"><script type="text/plain" class="language-markup"> gap:</script></code>  nos ahorra codigo, pero al no tener un soporte total, utilizamos el codigo anterior</p>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+    .tres-columnas{
+        display: flex; 
+        gap: 3rem;
+    }
+}</script></code></pre>
+
             <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
+                <a class="boton" href="patrones/04-3columnas_iguales_flexbox/index.html" target="_blank">Ejemplo</a>
             </div> <!-- seccion -->
+
         <div class="seccion__contenido">
             <h3>Tres Columnas Iguales (uno mas grande)</h3>
             <div class="seccion__explicacion"> 
