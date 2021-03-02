@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Grid</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/prism.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <section>
+        <h1 class="prinicpal__titulo">CSS Flexbox</h1>
+    </section>
+
+    <section class="seccion">
+       
+            <h2 class="seccion__titulo">Qué es css Flexbox</h2>
+            <div class="seccion__explicacion"> 
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
+                </p>
+                <p>
+                   Patrones de diseño para Responsive Web Desing
+                </p>
+        </div>
+
+        <div class="seccion_contenido">
+            <h3>Dos Columnas Iguales</h3>
+            <p>En este patrón de diseño se tienen dos columnas del mismo tamaño, generalmente para computadoras o tablets, en movil toma una sola columna.</p>
+            <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
+
+            <h4>Codigo en HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
+    <article class="entrada-blog"> 
+        <h1>Titulo Entrada Blog</h1>
+        <img src="img/imagen1.jpg">
+        <p>Maecenas maximus urna vitae nisl semper, risus. Quisque varius orci et augue scelerisque luctus.</p>
+        <a href="#">Leer más</a>
+    </article>
+    <article class="entrada-blog">
+        <h1>Titulo Entrada Blog</h1>
+        <img src="img/imagen2.jpg">
+        <p>Maecenas maximus urna vitae nisl semper, id volutpat augue scelerisque luctus.</p>
+        <a href="#">Leer más</a>
+    </article>
+</div></script></code></pre>
+
+    <h4>
+        codigo CSS
+    </h4>
+
+    <pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
+            max-width: 1200px;
+            width: 95%;
+            margin: 0 auto;
+        }
+        @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
+            .dos-columnas{ /* elemento padre */
+                display: grid;
+                grid-template-columns: 50% 50%;
+                column-gap: 5rem; /* define el tamaño de separación entre columnas*/
+            }
+        }</script></code></pre>
+
+        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code> nos ofrece el acceso a propiedades 
+        exclusivas de CSS grid.</p>
+
+        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code> toma el porcentaje total dado por el selector  <code class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code> y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas distintas:</p>
+
+        <pre><code class="language-css"><script type="text/plain" class="language-markup">{
+grid-template-columns: 50% 50%; /* toma el tamaño dado por los porcentajes*/
+grid-template-columns: repeat(2, 50%); /* indica dos columnas del 50%*/
+grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % total*/
+}</script></code></pre>
+
+
+
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+            <h3>Tres Columnas Iguales</h3>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+            <h3>Tres Columnas Iguales (uno mas grande)</h3>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+            <h3>Column drop</h3>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+            <h3>Side Bar</h3>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+            <h3>layout Shifter</h3>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+        
+
+        </div>
+    </section>
+    
+
+    <footer>
+        <div class="pie__contenido">
+           <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
+        </div>
+    </footer>
+
+
+    <script src="js/prism.js"></script>
+</body>
+</html>
