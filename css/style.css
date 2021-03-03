@@ -145,3 +145,60 @@ html{
       font-family: var(--cruba);
       font-size: 3rem;
   }
+
+  /* E x p l i c a c i o n g r i d */
+
+  .grid__padre{
+    border: solid var(--negro);
+    margin: 0 auto;
+    height: 50rem;
+    display: grid;
+    
+    margin-bottom: 1rem;
+  }
+
+
+  .grid--1{
+    width: 40%;
+    column-gap: 0;
+    grid-template-columns: repeat(1, 1fr);
+  }  
+
+
+.grid__hijo--1{
+  background-color: #0cf;
+   
+}
+
+.grid__hijo--2{
+  background-color: #0075A2;
+
+}
+
+.grid--2{
+  height: 50rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 elementos de 1 fraccion del 100% */
+  grid-auto-flow: column;
+  border: solid;
+  column-gap: 1rem;
+  row-gap: 1rem;
+
+}
+
+.grid__hijo--3{
+  background-color: #0cf;
+  grid-column: 2/4;
+  grid-row: 2/3;
+}
+
+.grid__hijo--4{
+  background-color: #0075A2;
+
+}
+
+.grid__hijo--5{
+  background-color: #0cf;
+  grid-column: 1/4;
+   
+}

@@ -11,22 +11,25 @@
 </head>
 <body>
     
+<section>
+    <h1 class="prinicpal__titulo">Guia de ayuda CSS Grid</h1>
+</section>
+
+<section class="seccion">
+    
     <section>
-        <h1 class="prinicpal__titulo">Guia de ayuda CSS Grid</h1>
+        <h2 class="seccion__titulo">Qué es css Grid</h2>
+        <div class="seccion__explicacion"> 
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
+            </p>
+            <p>
+                Patrones de diseño para Responsive Web Desing
+            </p>
+    </div>
     </section>
 
-    <section class="seccion">
-       
-            <h2 class="seccion__titulo">Qué es css Grid</h2>
-            <div class="seccion__explicacion"> 
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
-                </p>
-                <p>
-                   Patrones de diseño para Responsive Web Desing
-                </p>
-        </div>
-
+    <section><!-- C O L U M N A S  I G U A L E S -->
         <div class="seccion_contenido">
             <h3>Dos Columnas Iguales</h3>
             <p>En este patrón de diseño se tienen dos columnas del mismo tamaño, generalmente para computadoras o tablets, en movil toma una sola columna.</p>
@@ -39,8 +42,8 @@
         <img src="img/imagen1.jpg">
         <p>Maecenas maximus urna vitae nisl semper, risus. Quisque varius orci et augue scelerisque luctus.</p>
         <a href="#">Leer más</a>
-    </article>
-    <article class="entrada-blog">
+        </article>
+        <article class="entrada-blog">
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen2.jpg">
         <p>Maecenas maximus urna vitae nisl semper, id volutpat augue scelerisque luctus.</p>
@@ -48,29 +51,28 @@
     </article>
 </div></script></code></pre>
 
-    <h4>
-        codigo CSS
-    </h4>
+            <h4>
+            codigo CSS
+            </h4>
 
-    <pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
-            max-width: 1200px;
-            width: 95%;
-            margin: 0 auto;
-        }
-        @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
-            .dos-columnas{ /* elemento padre */
-                display: grid;
-                grid-template-columns: 50% 50%;
-                column-gap: 5rem; /* define el tamaño de separación entre columnas*/
-            }
-        }</script></code></pre>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+    }
+    @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
+    .dos-columnas{ /* elemento padre */
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 5rem; /* define el tamaño de separación entre columnas*/
+}}</script></code></pre>
 
-        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code> nos ofrece el acceso a propiedades 
-        exclusivas de CSS grid.</p>
+            <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code> nos ofrece el acceso a propiedades 
+            exclusivas de CSS grid.</p>
 
-        <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code> toma el porcentaje total dado por el selector  <code class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code> y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas distintas:</p>
+            <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code> toma el porcentaje total dado por el selector  <code class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code> y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas distintas:</p>
 
-        <pre><code class="language-css"><script type="text/plain" class="language-markup">{
+<pre><code class="language-css"><script type="text/plain" class="language-markup">{
 grid-template-columns: 50% 50%; /* toma el tamaño dado por los porcentajes*/
 grid-template-columns: repeat(2, 50%); /* indica dos columnas del 50%*/
 grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % total*/
@@ -79,137 +81,129 @@ grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % t
 
 
             <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html" target="_blank">Ejemplo</a>
-            </div> <!-- seccion -->
+            <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html" target="_blank">Ejemplo</a>
+            </div>
+        </div>
+
+    </section> <!-- F I N  C O L U M N A S  I G U A L E S -->
+    
+    <section> <!-- T R E S  C O L U M N A S  I G U A L E S -->
         <div class="seccion__contenido">
 
             <h3>Tres Columnas Iguales</h3>
 
-                <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
+            <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
 
-                <h4>Codigo en HTML</h4>
+            <h4>Codigo en HTML</h4>
 <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
     <article class="entrada-blog">
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen1.jpg">
         <p>Maecenas maximus urna vitae nisl semper.</p>
         <a href="#">Leer más</a>
-    </article>
-    <article class="entrada-blog">
+        </article>
+        <article class="entrada-blog">
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen2.jpg">
         <p>Maecenas maximus urna vitae nisl semper.</p>
         <a href="#">Leer más</a>
-    </article>
-    <article class="entrada-blog">
+        </article>
+        <article class="entrada-blog">
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen3.jpg">
-
         <p>Maecenas maximus urna vitae nisl semper.</p>
         <a href="#">Leer más</a>
     </article>
 </div></script></code></pre>
-                
-                    <h4>
-                        codigo CSS
-                    </h4>
-                
+
+            <h4>
+            codigo CSS
+            </h4>
+
 <pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width: 768px){
     .tres-columnas{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 elementos de 1 fraccion del 100% */
     column-gap: 3rem; /* separacion entre elementos */
-    }
-}</script></code></pre>
+}}</script></code></pre>
 
 <h4>Alternativa</h4>
 <pre><code class="language-css"><script type="text/plain" class="language-markup">{
-    grid-template-columns: 33.33% 33.33% 33.33%; /* toma el tamaño dado por los porcentajes*/
-    grid-template-columns: repeat(3, 33.33%); /* indica tres columnas del 33.33%*/
-    }</script></code></pre>
+grid-template-columns: 33.33% 33.33% 33.33%; /* toma el tamaño dado por los porcentajes*/
+grid-template-columns: repeat(3, 33.33%); /* indica tres columnas del 33.33%*/
+}</script></code></pre>
 
-                        <div class="seccion__explicacion"> 
+            <div class="seccion__explicacion"> 
                 <a class="boton" href="patrones/03-3columnas_iguales_css_grid/index.html" target="_blank">Ejemplo</a>
-            </div> <!-- seccion -->
+            </div> 
+        </div>
+    </section> <!-- F I N  T R E S  C O L U M N A S  I G U A L E S -->
+
+    <section> <!-- TRES COLUMNAS (UNO MAS GRANDE) -->
         <div class="seccion__contenido">
-
             <h3>Tres Columnas Iguales (uno mas grande)</h3>
-
             <p>Es un patrón de diseño en el que obtenemos columnas de diferentes tamaños, en este ejemplo vamos a posicionar uno al centro mas grande, y los lados mas pequeños</p>
-
-            
             <h4>Codigo en HTML</h4>
 <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor cotenedor-grid"> <!-- Elemento padre -->
-    <main class="contenido-principal"> <!-- Elemento hijo -->
-            <h1>Entrada del Blog</h1>
-            <img src="img/imagen1.jpg"> 
-            <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis.
-            Duis interdum venenatis metus, ut condimentum tortor fringilla eu. Curabitur mi lorem, pellentesque sed feugiat vitae, commodo id leo. Mauris nec dui consectetur, ullamcorper eros vel, volutpat nulla. Mauris mattis dignissim laoreet.
-            In at tellus et quam iaculis commodo. Aliquam cursus turpis sed elit consequat placerat sit amet in ante. Nulla libero ex, imperdiet non faucibus a, sagittis sit amet ligula. Sed blandit ante est, nec aliquet quam pulvinar sed. Sed
-            varius, lacus in facilisis ultrices, urna turpis ullamcorper nibh, sit amet interdum nisi nisi eget arcu. Vestibulum bibendum velit justo, eget cursus ipsum pharetra in.</p>
-        </article>
-    </main>
-    <aside class="sidebar-1"> <!-- Elemento hijo -->
-        <h2>Sobre Nosotros</h2>
-        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </aside>
-    <aside class="sidebar-2"> <!-- Elemento hijo -->
-        <h2>Misión</h2>
-        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </aside>
+<main class="contenido-principal"> <!-- Elemento hijo -->
+        <h1>Entrada del Blog</h1>
+        <img src="img/imagen1.jpg"> 
+        <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis.
+        Duis interdum venenatis metus, ut condimentum tortor fringilla eu. Curabitur mi lorem, pellentesque sed feugiat vitae, commodo id leo. Mauris nec dui consectetur, ullamcorper eros vel, volutpat nulla. Mauris mattis dignissim laoreet.
+        In at tellus et quam iaculis commodo. Aliquam cursus turpis sed elit consequat placerat sit amet in ante. Nulla libero ex, imperdiet non faucibus a, sagittis sit amet ligula. Sed blandit ante est, nec aliquet quam pulvinar sed. Sed
+        varius, lacus in facilisis ultrices, urna turpis ullamcorper nibh, sit amet interdum nisi nisi eget arcu. Vestibulum bibendum velit justo, eget cursus ipsum pharetra in.</p>
+    </article>
+</main>
+<aside class="sidebar-1"> <!-- Elemento hijo -->
+    <h2>Sobre Nosotros</h2>
+    <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</aside>
+<aside class="sidebar-2"> <!-- Elemento hijo -->
+    <h2>Misión</h2>
+    <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+    in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</aside>
 </div></script></code></pre>
-                            
-                                <h4>
-                                    codigo CSS
-                                </h4>
-                            
+            <h4>codigo CSS </h4>                       
 <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
-    .cotenedor-grid {
-        display: grid;
-        grid-template-columns: 20% 60% 20%;
-        grid-auto-flow: column;
-        column-gap: 2rem;
-    }
-    .contenido-principal{
+.cotenedor-grid {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    grid-auto-flow: column;
+    column-gap: 2rem;
+}
+.contenido-principal{
 grid-column: 2 / 3;
-    }
-    .sidebar-1{
-        grid-column: 1/2;
-    }
-    .sidebar-2{
-        grid-column: 3/4;
-    }
+}
+.sidebar-1{
+    grid-column: 1/2;
+}
+.sidebar-2{
+    grid-column: 3/4;
+}
 }</script></code></pre>
+            <p>con <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns: 20% 60% 20%; </script></code> le estamos indicando los tamaños en pantalla que va tomar.</p>
+            <p>con<code class="language-css"><script type="text/plain" class="language-markup">  grid-auto-flow: column; </script></code> vamos evitar que los elementos se desplacen.</p>
+            <p>con los selectores <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
+            le estamos indicando al grid que tome la posición indicada por el valor del selector <code class="language-css"><script type="text/plain" class="language-markup">grid-column:;</script></code>
+            para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar de FireFox.</p>
+            <img src="img/img1.png" alt="imagen de ejemplo">
+            <p>Por ejemplo con el selector <code class="language-css"><script type="text/plain" class="language-markup">  .contenido-principal{} </script></code> le 
+            estamos indicando que se posicione desde el numero 2 hasta el 3, por lo que tomaria el 60% del tamaño, algo similar pasaría con los demas selectores que deseamos posicionar.
+            </p>
+            <p>
+            por lo que finalmente tendriamos el siguiente resultado, aplicando las posiciones.
+            </p>
+            <img src="img/img2.png" alt="">
 
-<p>con <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns: 20% 60% 20%; </script></code> le estamos indicando los tamaños en pantalla que va tomar.</p>
-<p>con<code class="language-css"><script type="text/plain" class="language-markup">  grid-auto-flow: column; </script></code> vamos evitar que los elementos se desplacen.</p>
-
-<p>con los selectores <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
-le estamos indicando al grid que tome la posición indicada por el valor del selector <code class="language-css"><script type="text/plain" class="language-markup">grid-column:;</script></code>
-para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar de FireFox.</p>
-<img src="img/img1.png" alt="imagen de ejemplo">
-
-<p>Por ejemplo con el selector <code class="language-css"><script type="text/plain" class="language-markup">  .contenido-principal{} </script></code> le 
-estamos indicando que se posicione desde el numero 2 hasta el 3, por lo que tomaria el 60% del tamaño, algo similar pasaría con los demas selectores que deseamos posicionar.
-</p>
-
-<p>
-    por lo que finalmente tendriamos el siguiente resultado, aplicando las posiciones.
-</p>
-
-<img src="img/img2.png" alt="">
-
-<h4>Alternativa</h4>
+            <h4>Alternativa</h4>
 <pre><code class="language-css"><script type="text/plain" class="language-markup">{
-    grid-template-columns: 1fr 3fr 1fr;
-    }</script></code></pre>
-
-    <p>Por cada pixel que reciben los <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code> toma el tamaño dado por los fracciones de <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code></p>
-
-<h4>Una alternativa más avanzada</h4>
-
+grid-template-columns: 1fr 3fr 1fr;
+}</script></code></pre>
+            <p>Por cada pixel que reciben los <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code> toma el tamaño dado por los fracciones de <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code></p>
+          
+            <h4>Una alternativa más avanzada</h4>
 <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
 .cotenedor-grid {
 display: grid; 
@@ -227,36 +221,117 @@ grid-area: izquierda;
 .sidebar-2{
 grid-area: derecha;
 }
-    }</script></code></pre>
-<p>  <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-areas:</script></code>crea unas tipo variables que van a corresponder a los tamaños dados por <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code> recursivamente.</p>
-<p>y simplemente al selector se la da la propiedad de <code class="language-css"><script type="text/plain" class="language-markup">grid-area: contenido </script></code> para poder utilizarla</p>
+}</script></code></pre>
 
+            <p>  <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-areas:</script></code>crea unas tipo variables que van a corresponder a los tamaños dados por <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code> recursivamente.</p>
+            <p>y simplemente al selector se la da la propiedad de <code class="language-css"><script type="text/plain" class="language-markup">grid-area: contenido </script></code> para poder utilizarla</p>
             <div class="seccion__explicacion"> 
                 <a class="boton" href="patrones/05-3columnas_css_grid/index.html">Ejemplo</a>
+            </div> 
+        <div><!-- seccion -->
+    </section> <!-- FIN TRES COLUMNAS (UNO MAS GRANDE) -->
 
+<section><!-- C O L U M N  D R O P -->
+    <div class="seccion__contenido">
+        <h3>Column drop</h3>
+        <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible</p>
+        <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
 
-
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
-            <h3>Column drop</h3>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
-            <h3>Side Bar</h3>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
-            <h3>layout Shifter</h3>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
-        
-
+        <div class=" grid--1 grid__padre">
+            <div class="grid__hijo--1">
+                <p>Primer Columna</p>
+            </div>
+            <div class="grid__hijo--2">
+                <p>Segunda Columna</p>
+            </div>
+            <div class="grid__hijo--1">
+                <p>Tercera Columna</p>
+            </div>
         </div>
-    </section>
+        <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían recolocando, se adapataría para obtener algo como lo siguiente:</p>
+        <div class="grid--2">
+            <div class="grid__hijo--3">
+                <p>Primer Columna</p>
+            </div>
+            <div class="grid__hijo--4">
+                <p>Segunda Columna</p>
+            </div>
+            <div class="grid__hijo--5">
+                <p>Tercera Columna</p>
+            </div>  
+        </div>
+
+        <p>podríamos cambiar totalmente la distribución</p>
+        <p>veamos un ejemplo</p>
+
+        <h4>Codigo HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor column-drop"> /* Padre */
+<main class="primera"> /* hijo */
+    <h1>Column Drop (primera columna)</h1>
+    <p>
+        Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</main>
+<aside class="segunda"> /* */
+    <h1>Titulo Blog (segunda columna)</h1>
+    <p>
+        Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</aside> 
+<aside class="tercera"> /* */
+    <h1>Titulo Blog (tercera columna)</h1>
+    <p>
+        Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</aside>
+</div> </script></code></pre>
+
+<h4>Codigo CSS</h4>
+
+<p>Con la siguiente media querie le estamos indicando que a dispotivos mayores de 480px tome la distibución de 2 columnas, pero como son 3 elementos va crear automaticamente 
+una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1 hasta el 3, para que los siguiente dos espacios los rellene con los demas elementos. 
+</p>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
+.column-drop{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:3rem;
+}
+.primera{
+    grid-column: 1/3;
+}
+}</script></code></pre>
+
+<p>Obtendríamos algo como esto:</p>
+<img src="img/img3.png" alt="imagen de prueba">
+
+            <P>Aplicando otra distribución a dispositivos mayores a 768px.</P>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+    .column-drop{
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-flow: column;
+    }
+    .primera{
+        grid-column: 3/4;
+    }
+}</script></code></pre>
+                
+        <div class="seccion__explicacion"> 
+            <a class="boton" href="#">Ejemplo</a>
+        </div> <!-- seccion -->
+        <section><!-- F I N  C O L U M N  D R O P -->
+
+
+    <div class="seccion__contenido">
+        <h3>Side Bar</h3>
+        <div class="seccion__explicacion"> 
+            <a class="boton" href="#">Ejemplo</a>
+        </div> <!-- seccion -->
+    <div class="seccion__contenido">
+        <h3>layout Shifter</h3>
+        <div class="seccion__explicacion"> 
+            <a class="boton" href="#">Ejemplo</a>
+        </div> <!-- seccion -->
+    <div class="seccion__contenido">
+    </div>
+</section>
     
 
     <footer>
