@@ -55,12 +55,12 @@ display: flex;
 justify-content: space-between;
     }
 .contenido-principal{
-    flex-basis: calc(60% - 1rem);
+    flex-basis: calc(60% - 1rem);  /* le estamos indicando el ancho y la separacion al restarle 1 rem */
 }
     .sidebar{
-        flex-basis: calc(20% -1rem);
+        flex-basis: calc(20% -1rem); /* le estamos indicando el ancho y la separacion al restarle 1 rem */
     }
     .sidebar-1{
-        order:-1;
+        order:-1; /* muesta el contenido primero */
     }
 }

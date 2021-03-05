@@ -133,12 +133,59 @@
             <div class="seccion__explicacion"> 
                 <a class="boton" href="patrones/04-3columnas_iguales_flexbox/index.html" target="_blank">Ejemplo</a>
             </div> <!-- seccion -->
-
+<section> <!-- FLEXBOX T R E S  C O L U M N A S  I G U A L E S -->
         <div class="seccion__contenido">
             <h3>Tres Columnas Iguales (uno mas grande)</h3>
+            <p>Con FlexBox podemos lograr columnas de tamaños diferentes </p>
+<h4>Codigo HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor contenedor-flex"> <!-- Contenedor padre  -->
+    <main >
+        <article class="contenido-principal"> <!--  Contenedor Hijo -->
+            <h1>Entrada del Blog</h1>
+            <img src="img/imagen1.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis.
+            </p>
+            <p>Aliquam urna enim, ullamcorper vel urna id, tincidunt lobortis tortor. Donec bibendum condimentum purus, at rhoncus sapien. Phasellus ac ipsum metus. Aliquam arcu erat, posuere ac dolor vel, imperdiet tempor enim. Fusce tristique consequat
+            </p>
+            <p>Aliquam erat volutpat. Ut dapibus tincidunt odio, a pulvinar dolor dapibus varius. Quisque fringilla faucibus sapien nec blandit. Cras at lectus tincidunt mi cursus dapibus in a nunc. Suspendisse vitae velit orci. Suspendisse nisi sapien,
+            </p>
+        </article>
+    </main>
+    <aside class="sidebar-1 sidebar"> <!--  Contenedor Hijo -->
+        <h2>Sobre Nosotros</h2>
+        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        </p>
+        </aside>
+    <aside class="sidebar-2 sidebar"> <!--  Contenedor Hijo -->
+        <h2>Misión</h2>
+        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        </p>
+        </aside>
+</div></script></code></pre>
+<h4>Codigo CSS</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media(min-width:768px){
+    .contenedor-flex{
+display: flex;
+justify-content: space-between;
+    }
+.contenido-principal{
+    flex-basis: calc(60% - 1rem);
+}
+    .sidebar{
+        flex-basis: calc(20% -1rem);
+    }
+    .sidebar-1{
+        order:-1;
+    }
+}</script></code></pre>
+            <p>Al Hijo principal <code class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code> le estamos indicando que tome la mayor cantidad de espacio en pantalla y le reste un 1rem para la separación con el valor la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:calc (60%-1rem) </script></code> </p>
+            <p>Y con el selector <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code> le estamos indicando que tome un tamaño menor en pantalla, por cada hijo al que le asignamos este selector </p>
+            <p>Con el selector especifico <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar-1{}</script></code> le estamos diciendo que con la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> order:-1;</script></code>tome la primera columna en el espacio en pantalla</p>
             <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
+                <a class="boton" href="patrones/06-3columnas_flexbox/index.html">Ejemplo</a>
             </div> <!-- seccion -->
+        </section>
+            
         <div class="seccion__contenido">
             <h3>Column drop</h3>
 
@@ -146,29 +193,73 @@
             <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
 
             
-        <div class=" grid--1 grid__padre">
-            <div class="grid__hijo--1">
+        <div class=" flex__padre">
+            <div class="flex__hijo--1">
                 <p>Primer Columna</p>
             </div>
-            <div class="grid__hijo--2">
+            <div class="flex__hijo--2">
                 <p>Segunda Columna</p>
             </div>
-            <div class="grid__hijo--1">
+            <div class="flex__hijo--1">
                 <p>Tercera Columna</p>
             </div>
         </div>
         <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían recolocando, se adapataría para obtener algo como lo siguiente:</p>
-        <div class="grid--2">
-            <div class="grid__hijo--3">
+        <div class=" flex--1 flex__padre">
+            <div class="flex__hijo--1">
                 <p>Primer Columna</p>
             </div>
-            <div class="grid__hijo--4">
+            <div class="flex__hijo--2">
                 <p>Segunda Columna</p>
             </div>
-            <div class="grid__hijo--5">
+            <div class="flex__hijo--1">
                 <p>Tercera Columna</p>
             </div>  
         </div>
+
+        <h4>Codigo HTML</h4>
+
+<pre><code class="language-html"><script type="text/plain" class="language-markup">     <div class="contenedor column-drop-flex">
+    <main class="contenido-principal">
+        <h1>Column Drop (primera columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+    </main>
+
+    <aside class="primera">
+        <h1>Titulo Blog (segunda columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+    </aside>
+
+    <aside class="segunda">
+        <h1>Titulo Blog (tercera columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </aside>
+</div></script></code></pre>
+
+<h4>Codigo CSS</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
+.column-drop-flex{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;/* le estamos indicando que recorra los elementos a la siguiente fila cuando no hay mas espacio disponible */
+}
+.contenido-principal, .primera{
+    flex-basis: calc(50% - 1rem);
+}}
+
+@media (min-width: 768px){
+.contenido-principal, .primera, .segunda{
+    flex: 0 0 calc(33.33% -2rem);
+}}</script></code></pre>
+
+
             <div class="seccion__explicacion"> 
                 <a class="boton" href="#">Ejemplo</a>
             </div> <!-- seccion -->
@@ -186,6 +277,7 @@
         
 
         </div>
+        
     </section>
     
 
