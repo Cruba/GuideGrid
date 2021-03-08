@@ -247,7 +247,7 @@ justify-content: space-between;
 <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
 .column-drop-flex{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-evenly;  /* separación de contenido */
     flex-wrap: wrap;/* le estamos indicando que recorra los elementos a la siguiente fila cuando no hay mas espacio disponible */
 }
 .contenido-principal, .primera{
@@ -256,18 +256,64 @@ justify-content: space-between;
 
 @media (min-width: 768px){
 .contenido-principal, .primera, .segunda{
-    flex: 0 0 calc(33.33% -2rem);
+    flex: 0 0 calc(33.33% - 2rem);
 }}</script></code></pre>
 
-
+<p>En la distribución de 480px le estamos diciendo que los dos primeros elementos tomen el 50% con <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> y que el tercer elemento se recorra
+con <code class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:</script></code>ya que los dos primeros ocupan el 100% de la pantalla</p>
+<p>en la distribucón de 768px, estamos creando 3 columnas que sumando su porcentaje de el 100% con <code class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code></p>
             <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
+                <a class="boton" href="patrones/08-column_drop_flexbox/index.html">Ejemplo</a>
             </div> <!-- seccion -->
         <div class="seccion__contenido">
+
             <h3>Side Bar</h3>
+
+            <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas grande y una barra lateral de menor tamaño</p>
+            
+            <h4>Codigo HTML</h4>
+    <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
+        <article>
+            <h1>Entrada del Blog</h1>
+            <img src="img/imagen1.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis. Duis
+            interdum venenatis metus, ut condimentum tortor fringilla eu. Curabitur mi lorem, pellentesque sed feugiat vitae, commodo id leo. Mauris nec dui consectetur, ullamcorper eros vel, volutpat nulla. Mauris mattis dignissim laoreet. In at
+            tellus et quam iaculis commodo. Aliquam cursus turpis sed elit consequat placerat sit amet in ante. Nulla libero ex, imperdiet non faucibus a, sagittis sit amet ligula. Sed blandit ante est, nec aliquet quam pulvinar sed. Sed varius, lacus
+            in facilisis ultrices, urna turpis ullamcorper nibh, sit amet interdum nisi nisi eget arcu. Vestibulum bibendum velit justo, eget cursus ipsum pharetra in.</p>
+        </article>
+        <aside>
+            <h2>Sobre Nosotros</h2>
+            <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Misión</h2>
+            <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </aside>
+    </div> </script></code></pre>
+            
+            <h4>Codigo CSS</h4>
+    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+        .con-sidebar{
+            display: flex;
+            gap: 3rem;
+        }
+        aside{
+            flex: 1; /* Factor de crecimiento */
+        }
+        article{
+            flex: 3; /* por cada pixel que toma aside, article recibe 3 */
+        }
+    }}</script></code></pre>
+
+    <p>con la propiedad <code class="language-css"><script type="text/plain" class="language-markup">flex:</script></code>le estamos diciendo entonces al selector que:</p>
+
+        <img src="img/exp.png" alt="">
             <div class="seccion__explicacion"> 
-                <a class="boton" href="#">Ejemplo</a>
+                <a class="boton" href="patrones/10-con_sidebar_flexbox/index.html">Ejemplo</a>
+            </div>
             </div> <!-- seccion -->
+
+
         <div class="seccion__contenido">
             <h3>layout Shifter</h3>
             <div class="seccion__explicacion"> 

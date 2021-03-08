@@ -62,10 +62,10 @@ p {
 
 }
 
-@media (min-width: 768px){
-
-    .contenido-principal, .primera, .segunda{
-        flex: 0 0 calc(33.33% -2rem);
-    }
-
+@media (min-width: 768px) {
+    .contenido-principal,
+    .primera,
+    .segunda {
+        flex: 0 0 calc(33.3% - 2rem);
 }
+ }
