@@ -49,3 +49,13 @@ p {
 
 
 /** CODIGO AQUI **/
+
+@media (min-widht: 768px ){
+    .layout-shifter{
+        display: grid;
+    }
+}
+
+@media (min-widht: 992px){
+    
+}
