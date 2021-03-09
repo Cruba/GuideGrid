@@ -57,12 +57,19 @@ p {
                               "inferior";
         
     }
+    .sidebar{
+        grid-area: inferior;
+    }
 }
 
 @media (min-width: 992px){
 
     .layout-shifter{
-        grid-template-areas:"" ;
+        grid-template-areas:"contenido sidebar" ;
+    }
+
+    .sidebar{
+        grid-area: sidebar;
     }
     
 }
