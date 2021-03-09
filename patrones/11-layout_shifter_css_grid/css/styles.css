@@ -50,12 +50,19 @@ p {
 
 /** CODIGO AQUI **/
 
-@media (min-widht: 768px ){
+@media (min-width: 768px ){
     .layout-shifter{
         display: grid;
+        grid-template-areas: "contenido" 
+                              "inferior";
+        
     }
 }
 
-@media (min-widht: 992px){
+@media (min-width: 992px){
+
+    .layout-shifter{
+        grid-template-areas:"" ;
+    }
     
 }
