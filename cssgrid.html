@@ -187,7 +187,7 @@ grid-column: 2 / 3;
             <p>con<code class="language-css"><script type="text/plain" class="language-markup">  grid-auto-flow: column; </script></code> vamos evitar que los elementos se desplacen.</p>
             <p>con los selectores <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
             le estamos indicando al grid que tome la posición indicada por el valor del selector <code class="language-css"><script type="text/plain" class="language-markup">grid-column:;</script></code>
-            para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar de FireFox.</p>
+            para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar.</p>
             <img src="img/img1.png" alt="imagen de ejemplo">
             <p>Por ejemplo con el selector <code class="language-css"><script type="text/plain" class="language-markup">  .contenido-principal{} </script></code> le 
             estamos indicando que se posicione desde el numero 2 hasta el 3, por lo que tomaria el 60% del tamaño, algo similar pasaría con los demas selectores que deseamos posicionar.
@@ -384,13 +384,128 @@ aside{
     </div> 
     </section> <!-- F I N  DE  S I D E  B A R   -->
 
+    <section> <!-- L A Y O U T  S H I F T E R  -->
     <div class="seccion__contenido">
         <h3>layout Shifter</h3>
+            
+        <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
+        <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en principales y viceversa</p>
+        <p>Suponiendo que tenemos un contenido ordenado:</p>
+        <img src="img/gridlayoutshifter.gif" alt="">
+        <p>Podriamos reacomodarlo como:</p>
+        <img src="img/gridlayoutshifter2.gif" alt="">
+
+        <p>Para este patron de diseño utilizamos la propiedad de <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-areas:</script></code> con la que creamos areas para los contenedores, y observa como se posicionan con este simple codigo</p>
+        <img src="img/contenedores1.gif" alt="">
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px ){
+.layout-shifter{
+display: grid;
+grid-template-areas: "contenido" 
+                     "inferior";
+} 
+@media (min-width: 992px){
+.layout-shifter{
+grid-template-areas:"contenido sidebar" ;
+}/* </script></code></pre>
+
+<p>esto lo podemos crear facimente con template columns pero, lo que va permitir layoutshifter es utilizar estas areas con nombre y definir donde se van a colocar</p>
+<p>para definir un area, simplemente utilizamos un selector en el elemento que deseamos manipular, con la propiedad de <code class="language-css"><script type="text/plain" class="language-markup">grid-area:</script></code></p>
+
+<h4>Codigo HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"> <div class="contenedor layout-shifter">
+<aside class="sidebar">
+    <h1>Titulo Blog (primera columna)</h1>
+    <p>
+        Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </p>
+</aside>
+<main class="contenido-principal">
+    <article class="entrada-blog">
+        <h1>Layout Shifter (segunda columna)</h1>
+        <img src="img/imagen1.jpg">
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </article>
+    <article class="entrada-blog">
+        <h1>Layout Shifter (tercera columna)</h1>
+        <img src="img/imagen2.jpg">
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </article>
+</main>
+</div></script></code></pre>
+
+<h4>Aplicando <code class="language-css"><script type="text/plain" class="language-markup"> grid-area:</script></code> podemos indicarle a grid que posicione la primera columna en la parte inferior</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
+    .layout-shifter{
+        display: grid;
+        grid-template-areas: "contenido" 
+                             "inferior";
+    }
+    .sidebar{
+        grid-area: inferior;
+    }
+@media (min-width: 992px){
+    .layout-shifter{
+        grid-template-areas:"contenido sidebar" ;
+    }
+    .sidebar{
+        grid-area: sidebar;
+        }}</script></code></pre>
+        <p>distribución de 768px</p>
+    <img src="img/exp2.png" alt="">
+    <p>distribución de 992px</p>
+    <img src="img/exp3.png" alt="">
+
+    <p>en resumen en tamaños inferiores el titulo se va desplazar a la parte inferior, y en tamaños mas grandes se va a posicionar de lado derecho del contenido, layout shifter entra en acción en cada Media Querie, cambiando la ubicación de los elementos.
+        esta es la función de layout shifter, cambiar de diseño dependiendo de cada media querie.
+    </p>
+
+    <h4>Aplicando un sub grid en un elemento padre <code class="language-css"><script type="text/plain" class="language-markup">.contenido-prinicpal{}</script></code></h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
+    .layout-shifter{
+        display: grid;
+        grid-template-areas: "contenido" 
+                              "inferior";
+    }  
+    .sidebar{
+        grid-area: inferior;
+    }
+     .contenido-principal{
+        grid-area: contenido;
+        display: grid;
+        grid-template-areas: "entrada2 entrada1";
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 3rem;
+    }  
+}
+@media (min-width: 992px){
+    .layout-shifter{
+        grid-template-areas:"contenido sidebar" ;
+    }
+    .sidebar{
+        grid-area: sidebar;
+    }
+ .contenido-principal{
+        grid-area: contenido;
+        grid-template-areas: "entrada1"
+                             "entrada2";
+        grid-template-columns: unset;
+    }
+}</script></code></pre>
+
+<p>El subgrid se va aplicar para los elementos que se encuentran dentro del selector, va crear dos areas para cada entrada de blog,  asigando una fracción de espacio, con una separación de 3rem, en la primera media querie.</p>
+<p>En la segunda media querie vamos a retirar la asignación de columnas, para posicionar las entradas una debajo de la otra.</p>
+
         <div class="seccion__explicacion"> 
-            <a class="boton" href="#">Ejemplo</a>
+            <a class="boton" href="patrones/11-layout_shifter_css_grid/index.html">Ejemplo</a>  </div>
         </div> <!-- seccion -->
-    <div class="seccion__contenido">
-    </div>
+    </section> <!-- F I N  L A Y O U T  S H I F T E R  -->
 </section>
 </section>
 

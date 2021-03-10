@@ -3,7 +3,7 @@
 
     --negro: #000000;
     --blanco: #fff;
-    --importante:#0075A2 ;
+    --importante:#0cf ;
     --explicacion: #320D6D;
     --secundario1:rgb(36, 41, 46);
     --secundario: rgba(0,0,0,0.5);
@@ -188,18 +188,22 @@ html{
 
 .grid__hijo--3{
   background-color: #0cf;
-  grid-column: 2/4;
-  grid-row: 2/3;
+  grid-column: 1/4;
+
 }
 
 .grid__hijo--4{
   background-color: #0075A2;
+  grid-row: 2/3;
 
 }
 
 .grid__hijo--5{
   background-color: #0cf;
-  grid-column: 1/4;
+  grid-row: 2/3;
+  grid-column: 2/4;
+
+
    
 }
 
