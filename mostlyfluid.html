@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS FlexBox.</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="css/prism.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <section>
+        <h1 class="prinicpal__titulo">CSS Flexbox</h1>
+    </section>
+
+    <section class="seccion">
+       
+            <h2 class="seccion__titulo">Qué es css Flexbox</h2>
+            <div class="seccion__explicacion"> 
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
+                </p>
+                <p>
+                   Patrones de diseño para Responsive Web Desing
+                </p>
+        </div>
+
+        <div class="seccion_contenido">
+            <h3>Dos Columnas Iguales</h3>
+            <p>para lograr dos columnas con flexblox, se realiza el siguiente procedimiento.</p>
+            <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
+
+            <h4>Codigo en HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
+    <article class="entrada-blog"> 
+        <h1>Titulo Entrada Blog</h1>
+        <img src="img/imagen1.jpg">
+        <p>Maecenas maximus urna vitae nisl semper, risus. Quisque varius orci et augue scelerisque luctus.</p>
+        <a href="#">Leer más</a>
+    </article>
+    <article class="entrada-blog">
+        <h1>Titulo Entrada Blog</h1>
+        <img src="img/imagen2.jpg">
+        <p>Maecenas maximus urna vitae nisl semper, id volutpat augue scelerisque luctus.</p>
+        <a href="#">Leer más</a>
+    </article>
+</div></script></code></pre>
+
+
+    <h4>
+        codigo CSS
+    </h4>
+
+    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+        .dos-columnas{
+            display: flex; /* Da acceso a todas las propiedades de flexbox */
+            justify-content: space-between;
+        }
+    
+        .entrada-blog{
+            flex-basis: calc(50% - 1rem); /* toma el 50% menos un espacio de rem */
+        }
+    }</script></code></pre>
+    <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup"> display: flex;</script></code> muestra por default todos los elementos de izquierda a derecha</p>
+
+
+        <p>con el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> le indicamos el tamaño y la separación que va tomar. </p>
+
+        <p>una alternativa es utiliar el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 calc(50% - 1rem); </script></code></p>
+      
+        <p>O se puede utilizar <code class="language-css"><script type="text/plain" class="language-markup"> gap: 1rem;</script></code>directamente en el elemento padre, pero la desventaje es que no tiene soporte en todos los navegadores, al ser mas nueva.</p>
+
+
+
+
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/02-2columnas_iguales_flexbox/index.html">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+
+            <h3>Tres Columnas Iguales</h3>
+            <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
+
+            <h4>Codigo en HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen1.jpg">
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen2.jpg">
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+<article class="entrada-blog">
+    <h1>Titulo Entrada Blog</h1>
+    <img src="img/imagen3.jpg">
+
+    <p>Maecenas maximus urna vitae nisl semper.</p>
+    <a href="#">Leer más</a>
+</article>
+</div></script></code></pre>
+            
+                <h4>
+                    codigo CSS
+                </h4>
+            
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+    .tres-columnas{
+        display: flex; 
+        justify-content: space-between;
+    }
+    .entrada-blog{
+        flex: 0 0 calc(33.33% - 1rem);
+    }
+}</script></code></pre>
+
+<h4>Alternativa</h4>
+
+<p>el elemeneto <code class="language-css"><script type="text/plain" class="language-markup"> gap:</script></code>  nos ahorra codigo, pero al no tener un soporte total, utilizamos el codigo anterior</p>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+    .tres-columnas{
+        display: flex; 
+        gap: 3rem;
+    }
+}</script></code></pre>
+
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/04-3columnas_iguales_flexbox/index.html" target="_blank">Ejemplo</a>
+            </div> <!-- seccion -->
+<section> <!-- FLEXBOX T R E S  C O L U M N A S  I G U A L E S -->
+        <div class="seccion__contenido">
+            <h3>Tres Columnas Iguales (uno mas grande)</h3>
+            <p>Con FlexBox podemos lograr columnas de tamaños diferentes </p>
+<h4>Codigo HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor contenedor-flex"> <!-- Contenedor padre  -->
+    <main >
+        <article class="contenido-principal"> <!--  Contenedor Hijo -->
+            <h1>Entrada del Blog</h1>
+            <img src="img/imagen1.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis.
+            </p>
+            <p>Aliquam urna enim, ullamcorper vel urna id, tincidunt lobortis tortor. Donec bibendum condimentum purus, at rhoncus sapien. Phasellus ac ipsum metus. Aliquam arcu erat, posuere ac dolor vel, imperdiet tempor enim. Fusce tristique consequat
+            </p>
+            <p>Aliquam erat volutpat. Ut dapibus tincidunt odio, a pulvinar dolor dapibus varius. Quisque fringilla faucibus sapien nec blandit. Cras at lectus tincidunt mi cursus dapibus in a nunc. Suspendisse vitae velit orci. Suspendisse nisi sapien,
+            </p>
+        </article>
+    </main>
+    <aside class="sidebar-1 sidebar"> <!--  Contenedor Hijo -->
+        <h2>Sobre Nosotros</h2>
+        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        </p>
+        </aside>
+    <aside class="sidebar-2 sidebar"> <!--  Contenedor Hijo -->
+        <h2>Misión</h2>
+        <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        </p>
+        </aside>
+</div></script></code></pre>
+<h4>Codigo CSS</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media(min-width:768px){
+    .contenedor-flex{
+display: flex;
+justify-content: space-between;
+    }
+.contenido-principal{
+    flex-basis: calc(60% - 1rem);
+}
+    .sidebar{
+        flex-basis: calc(20% -1rem);
+    }
+    .sidebar-1{
+        order:-1;
+    }
+}</script></code></pre>
+            <p>Al Hijo principal <code class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code> le estamos indicando que tome la mayor cantidad de espacio en pantalla y le reste un 1rem para la separación con el valor la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:calc (60%-1rem) </script></code> </p>
+            <p>Y con el selector <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code> le estamos indicando que tome un tamaño menor en pantalla, por cada hijo al que le asignamos este selector </p>
+            <p>Con el selector especifico <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar-1{}</script></code> le estamos diciendo que con la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> order:-1;</script></code>tome la primera columna en el espacio en pantalla</p>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/06-3columnas_flexbox/index.html">Ejemplo</a>
+            </div> <!-- seccion -->
+        </section>
+            
+        <div class="seccion__contenido">
+            <h3>Column drop</h3>
+
+            <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible</p>
+            <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
+
+            
+        <div class=" flex__padre">
+            <div class="flex__hijo--1">
+                <p>Primer Columna</p>
+            </div>
+            <div class="flex__hijo--2">
+                <p>Segunda Columna</p>
+            </div>
+            <div class="flex__hijo--1">
+                <p>Tercera Columna</p>
+            </div>
+        </div>
+        <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían recolocando, se adapataría para obtener algo como lo siguiente:</p>
+        <div class=" flex--1 flex__padre">
+            <div class="flex__hijo--1">
+                <p>Primer Columna</p>
+            </div>
+            <div class="flex__hijo--2">
+                <p>Segunda Columna</p>
+            </div>
+            <div class="flex__hijo--1">
+                <p>Tercera Columna</p>
+            </div>  
+        </div>
+
+        <h4>Codigo HTML</h4>
+
+<pre><code class="language-html"><script type="text/plain" class="language-markup">     <div class="contenedor column-drop-flex">
+    <main class="contenido-principal">
+        <h1>Column Drop (primera columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+    </main>
+
+    <aside class="primera">
+        <h1>Titulo Blog (segunda columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+        </p>
+    </aside>
+
+    <aside class="segunda">
+        <h1>Titulo Blog (tercera columna)</h1>
+        <p>
+            Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+    </aside>
+</div></script></code></pre>
+
+<h4>Codigo CSS</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
+.column-drop-flex{
+    display: flex;
+    justify-content: space-evenly;  /* separación de contenido */
+    flex-wrap: wrap;/* le estamos indicando que recorra los elementos a la siguiente fila cuando no hay mas espacio disponible */
+}
+.contenido-principal, .primera{
+    flex-basis: calc(50% - 1rem);
+}}
+
+@media (min-width: 768px){
+.contenido-principal, .primera, .segunda{
+    flex: 0 0 calc(33.33% - 2rem);
+}}</script></code></pre>
+
+<p>En la distribución de 480px le estamos diciendo que los dos primeros elementos tomen el 50% con <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> y que el tercer elemento se recorra
+con <code class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:</script></code>ya que los dos primeros ocupan el 100% de la pantalla</p>
+<p>en la distribucón de 768px, estamos creando 3 columnas que sumando su porcentaje de el 100% con <code class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code></p>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/08-column_drop_flexbox/index.html">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+
+            <h3>Side Bar</h3>
+
+            <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas grande y una barra lateral de menor tamaño</p>
+            
+            <h4>Codigo HTML</h4>
+    <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
+        <article>
+            <h1>Entrada del Blog</h1>
+            <img src="img/imagen1.jpg">
+            <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis. Duis
+            interdum venenatis metus, ut condimentum tortor fringilla eu. Curabitur mi lorem, pellentesque sed feugiat vitae, commodo id leo. Mauris nec dui consectetur, ullamcorper eros vel, volutpat nulla. Mauris mattis dignissim laoreet. In at
+            tellus et quam iaculis commodo. Aliquam cursus turpis sed elit consequat placerat sit amet in ante. Nulla libero ex, imperdiet non faucibus a, sagittis sit amet ligula. Sed blandit ante est, nec aliquet quam pulvinar sed. Sed varius, lacus
+            in facilisis ultrices, urna turpis ullamcorper nibh, sit amet interdum nisi nisi eget arcu. Vestibulum bibendum velit justo, eget cursus ipsum pharetra in.</p>
+        </article>
+        <aside>
+            <h2>Sobre Nosotros</h2>
+            <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h2>Misión</h2>
+            <p>Titulo Blog, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+            in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        </aside>
+    </div> </script></code></pre>
+            
+            <h4>Codigo CSS</h4>
+    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+        .con-sidebar{
+            display: flex;
+            gap: 3rem;
+        }
+        aside{
+            flex: 1; /* Factor de crecimiento */
+        }
+        article{
+            flex: 3; /* por cada pixel que toma aside, article recibe 3 */
+        }
+    }}</script></code></pre>
+
+    <p>con la propiedad <code class="language-css"><script type="text/plain" class="language-markup">flex:</script></code>le estamos diciendo entonces al selector que:</p>
+
+        <img src="img/exp.png" alt="">
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="patrones/10-con_sidebar_flexbox/index.html">Ejemplo</a>
+            </div>
+            </div> <!-- seccion -->
+
+
+        <div class="seccion__contenido">
+            <h3>layout Shifter</h3>
+
+            <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
+            <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en principales y viceversa</p>
+            <div class="seccion__explicacion"> 
+                <a class="boton" href="#">Ejemplo</a>
+            </div> <!-- seccion -->
+        <div class="seccion__contenido">
+        
+
+        </div>
+        
+    </section>
+    
+
+    <footer>
+        <div class="pie__contenido">
+           <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
+        </div>
+    </footer>
+
+
+    <script src="js/prism.js"></script>
+</body>
+</html>
