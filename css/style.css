@@ -132,6 +132,20 @@ html{
 
   }
 
+ .elementos__principales{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   width: 100rem ;
+   column-gap: 2rem;
+   margin: 0 auto;
+   height: auto;
+   
+ }
+
+.elementos__principales > .seccion{
+  width: 100%;
+}
+
   /* F o o t e r */
 
 .pie__contenido{
