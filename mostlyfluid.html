@@ -19,15 +19,60 @@
        
         <div class="seccion__contenido">
             <h2 class="seccion__titulo">Qué es css Mostly Fluid</h2>
+                <p> Este es el patron de diseño mas sencillo, el contenido fluye por el espacio disponible, variando entre espacios de los margenes de la izquierda y derecha </p>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
+                    simplemente a los contenedores les asignamos un ancho con un <code class="language-css"><script type="text/plain" class="language-markup">width: 95%;</script></code>
+                    para que tome el porcentaje total de pantalla que deseemos, es recomendable hacerlo con porcentajes, ya que con Px o Rem va existir un desbordamiento de contenido para los diferentes dispositivos.
                 </p>
-                <p>
-                   Patrones de diseño para Responsive Web Desing
-                </p>
+                <p>Para que tenga una mejor presentación aplicamos un max-width, para que tenga un tope, osea el maximo <code class="language-css"><script type="text/plain" class="language-markup"> max-width: 120rem</script></code></p>
+                <p>Utilizamos un <code class="language-css"><script type="text/plain" class="language-markup"> margin: 0 auto;</script></code> para centrar el contenido </p>
+                <p>A las imagenes también les podemos aplicar un width para que simpre sean responsivas <code class="language-css"><script type="text/plain" class="language-markup"> img{max-width: 100%;} </script></code> se aplica en max-width: para que no fuerce a las imagenes mas pequeñas a tomar ese valor.</p>
+
+                <p>con esas simples lineas el contenido va empezar a fluir, entre los diferentes tamaños de pantalla.</p>
+
+                <img src="img/mostlyfluid.gif" alt="">
+            
+                <p>También le podemos aplicar medias queries.</p>
+                <h4>Codigo HTML</h4>
+<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor">
+    <article class="entrada-blog">
+        <h1>Entrada del Blog</h1>
+        <img src="img/imagen1.jpg">
+        <p>Maecenas maximus urna vitae nisl semper, id volutpat ipsum scelerisque. Aenean nec ipsum finibus, eleifend dolor at, venenatis risus. Quisque varius orci et augue scelerisque luctus. Praesent laoreet tortor vel mauris suscipit convallis. Duis
+            .</p>
+        <p>Aliquam urna enim, ullamcorper vel urna id, tincidunt lobortis tortor. Donec bibendum condimentum purus, at rhoncus sapien. Phasellus ac ipsum metus. Aliquam arcu erat, posuere ac dolor vel, imperdiet tempor enim. Fusce tristique consequat
+            </p>
+        <p>Aliquam erat volutpat. Ut dapibus tincidunt odio, a pulvinar dolor dapibus varius. Quisque fringilla faucibus sapien nec blandit. Cras at lectus tincidunt mi cursus dapibus in a nunc. Suspendisse vitae velit orci. Suspendisse nisi sapien,
+            .</p>
+    </article>
+</div></script></code></pre>
+                <h4>Codigo CSS</h4>
+<pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor{
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+@media (min-width: 768px){
+    .contenedor{
+        width: 80%;
+    }
+}
+@media (min-width: 992px){
+    .contenedor{
+        width: 60%;
+    }
+    } 
+img{
+    max-width: 100%;
+    } </script></code></pre>
                 </div>
         
+                <div class="seccion__explicacion"> 
+                    <a class="boton" href="patrones/13-mostly_fluid/index.html">Ejemplo</a>
+                </div> <!-- seccion -->
     </section>
+
+
     
 
     <footer>
