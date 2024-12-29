@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,91 +10,115 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="css/prism.css" rel="stylesheet" />
 </head>
-<body>
-    
-<section>
-    <h1 class="prinicpal__titulo">Guia de ayuda CSS Grid</h1>
-</section>
 
-<section class="seccion">
-    
-    <section>
-        <h2 class="seccion__titulo">Qué es css Grid</h2>
+<body>
+
+    <header>
+        <h1 class="prinicpal__titulo">Guia de ayuda CSS Grid</h1>
+    </header>
+
+    <section class="seccion">
+        <h1 class="seccion__titulo">Qué es css Grid</h1>
+
+        <div>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
-            </p>
-            <p>
-                Patrones de diseño para Responsive Web Desing
-            </p>
+                sistema de maquetación web que permite dividir una página en una cuadrícula para posicionar sus
+                elementos de manera más sencilla y coherente </p>
+            <ul>
+                <li>Permite distribuir las partes de una página web en secciones más pequeñas</li>
+                <li>Ayuda a presentar la web en cualquier tipo de tamaño de pantalla </li>
+                <li>Simplifica el código necesario para crear un diseño web</li>
+                <li>Permite controlar la alineación de elementos y de toda la cuadrícula</li>
+                <li>Permite añadir más de un elemento en una celda y superponerse a las demás</li>
+            </ul>
+        </div>
     </section>
 
-    <section><!-- C O L U M N A S  I G U A L E S -->
-        <div class="seccion_contenido">
-            <h3>Dos Columnas Iguales</h3>
-            <p>En este patrón de diseño se tienen dos columnas del mismo tamaño, generalmente para computadoras o tablets, en movil toma una sola columna.</p>
-            <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
+    <nav class="indice seccion">
+        <a href="index.html" class="indice__elemento ">Inicio</a>
+        <a href="cssgrid.html" class="indice__elemento indice__elemento--activo">CSS Grid</a>
+        <a href="cssflexbox.html" class="indice__elemento">CSS Flexbox</a>
+        <a href="mostlyfluid.html" class="indice__elemento">Mostly Fluid</a>
+        <a href="tinytweaks.html" class="indice__elemento">Tiny Tweaks</a>
+    </nav>
 
-            <h4>Codigo en HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
-    <article class="entrada-blog"> 
-        <h1>Titulo Entrada Blog</h1>
-        <img src="img/imagen1.jpg">
-        <p>Maecenas maximus urna vitae nisl semper, risus. Quisque varius orci et augue scelerisque luctus.</p>
-        <a href="#">Leer más</a>
-        </article>
-        <article class="entrada-blog">
-        <h1>Titulo Entrada Blog</h1>
-        <img src="img/imagen2.jpg">
-        <p>Maecenas maximus urna vitae nisl semper, id volutpat augue scelerisque luctus.</p>
-        <a href="#">Leer más</a>
-    </article>
-</div></script></code></pre>
+    <main class="seccion">
 
-            <h4>
-            codigo CSS
-            </h4>
+       <section><!-- C O L U M N A S  I G U A L E S -->
+            <div class="seccion_contenido">
+                <h2>Dos Columnas Iguales</h2>
+                <div class="separador"></div>
+                <p>En este patrón de diseño se tienen dos columnas del mismo tamaño, generalmente para computadoras o
+                    tablets, en movil toma una sola columna.</p>
+                <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
 
-<pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
-    max-width: 1200px;
-    width: 95%;
-    margin: 0 auto;
-    }
-    @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
-    .dos-columnas{ /* elemento padre */
-    display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: 5rem; /* define el tamaño de separación entre columnas*/
-}}</script></code></pre>
+                <h3>Codigo en HTML</h3>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
+                    <article class="entrada-blog"> 
+                        <h1>Titulo Entrada Blog</h1>
+                        <img src="img/imagen1.jpg">
+                        <p>Maecenas maximus urna vitae nisl semper, risus. Quisque varius orci et augue scelerisque luctus.</p>
+                        <a href="#">Leer más</a>
+                        </article>
+                        <article class="entrada-blog">
+                        <h1>Titulo Entrada Blog</h1>
+                        <img src="img/imagen2.jpg">
+                        <p>Maecenas maximus urna vitae nisl semper, id volutpat augue scelerisque luctus.</p>
+                        <a href="#">Leer más</a>
+                    </article>
+                    </div></script></code></pre>
 
-            <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code> nos ofrece el acceso a propiedades 
-            exclusivas de CSS grid.</p>
+                <h3>
+                    codigo CSS
+                </h3>
 
-            <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code> toma el porcentaje total dado por el selector  <code class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code> y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas distintas:</p>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor {
+                    max-width: 1200px;
+                    width: 95%;
+                    margin: 0 auto;
+                    }
+                    @media (min-width: 768px){  /* solo aplica para dispositivos superiores a una tablet */
+                    .dos-columnas{ /* elemento padre */
+                    display: grid;
+                    grid-template-columns: 50% 50%;
+                    column-gap: 5rem; /* define el tamaño de separación entre columnas*/
+                }}</script></code></pre>
 
-<pre><code class="language-css"><script type="text/plain" class="language-markup">{
-grid-template-columns: 50% 50%; /* toma el tamaño dado por los porcentajes*/
-grid-template-columns: repeat(2, 50%); /* indica dos columnas del 50%*/
-grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % total*/
-}</script></code></pre>
+                <p>El elemento <code
+                        class="language-css"><script type="text/plain" class="language-markup">display:grid;</script></code>
+                    nos ofrece el acceso a propiedades
+                    exclusivas de CSS grid.</p>
 
+                <p>El elemento <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-template-columns:</script></code>
+                    toma el porcentaje total dado por el selector <code
+                        class="language-css"><script type="text/plain" class="language-markup">.contenedor{}</script></code>
+                    y lo divide entre el valor de las propiedades dadas por nosotros, se puede definir de tres formas
+                    distintas:</p>
 
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">{
+                    grid-template-columns: 50% 50%; /* toma el tamaño dado por los porcentajes*/
+                    grid-template-columns: repeat(2, 50%); /* indica dos columnas del 50%*/
+                    grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % total*/
+                    }</script></code></pre>
 
-            <div class="seccion__explicacion"> 
-            <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html" target="_blank">Ejemplo</a>
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/01-2columnas_iguales_css_grid/index.html"
+                        target="_blank">Ejemplo</a>
+                </div>
             </div>
-        </div>
+        </section> <!-- F I N  C O L U M N A S  I G U A L E S -->
 
-    </section> <!-- F I N  C O L U M N A S  I G U A L E S -->
-    
-    <section> <!-- T R E S  C O L U M N A S  I G U A L E S -->
-        <div class="seccion__contenido">
+        <section> <!-- T R E S  C O L U M N A S  I G U A L E S -->
+            <div class="seccion__contenido">
 
-            <h3>Tres Columnas Iguales</h3>
+                <h2>Tres Columnas Iguales</h2>
+                <div class="separador "></div>
 
-            <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
+                <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
 
-            <h4>Codigo en HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
+                <h3>Codigo en HTML</h3>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
     <article class="entrada-blog">
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen1.jpg">
@@ -114,35 +139,38 @@ grid-template-columns: repeat (2, 1fr); /* Dos columnas de una fracción del % t
     </article>
 </div></script></code></pre>
 
-            <h4>
-            codigo CSS
-            </h4>
+                <h3>
+                    codigo CSS
+                </h3>
 
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width: 768px){
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width: 768px){
     .tres-columnas{
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 elementos de 1 fraccion del 100% */
     column-gap: 3rem; /* separacion entre elementos */
 }}</script></code></pre>
 
-<h4>Alternativa</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">{
+                <h3>Alternativa</h3>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">{
 grid-template-columns: 33.33% 33.33% 33.33%; /* toma el tamaño dado por los porcentajes*/
 grid-template-columns: repeat(3, 33.33%); /* indica tres columnas del 33.33%*/
 }</script></code></pre>
 
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/03-3columnas_iguales_css_grid/index.html" target="_blank">Ejemplo</a>
-            </div> 
-        </div>
-    </section> <!-- F I N  T R E S  C O L U M N A S  I G U A L E S -->
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/03-3columnas_iguales_css_grid/index.html"
+                        target="_blank">Ejemplo</a>
+                </div>
+            </div>
+        </section> <!-- F I N  T R E S  C O L U M N A S  I G U A L E S -->
 
-    <section> <!-- TRES COLUMNAS (UNO MAS GRANDE) -->
-        <div class="seccion__contenido">
-            <h3>Tres Columnas Iguales (uno mas grande)</h3>
-            <p>Es un patrón de diseño en el que obtenemos columnas de diferentes tamaños, en este ejemplo vamos a posicionar uno al centro mas grande, y los lados mas pequeños</p>
-            <h4>Codigo en HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor cotenedor-grid"> <!-- Elemento padre -->
+        <section> <!-- TRES COLUMNAS (UNO MAS GRANDE) -->
+            <div class="seccion__contenido">
+                <h2>Tres Columnas Iguales (uno mas grande)</h2>
+                <div class="separador"></div>
+                <p>Es un patrón de diseño en el que obtenemos columnas de diferentes tamaños, en este ejemplo vamos a
+                    posicionar uno al centro mas grande, y los lados mas pequeños</p>
+                <h3>Codigo en HTML</h3>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor cotenedor-grid"> <!-- Elemento padre -->
 <main class="contenido-principal"> <!-- Elemento hijo -->
         <h1>Entrada del Blog</h1>
         <img src="img/imagen1.jpg"> 
@@ -163,8 +191,8 @@ grid-template-columns: repeat(3, 33.33%); /* indica tres columnas del 33.33%*/
     in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </aside>
 </div></script></code></pre>
-            <h4>codigo CSS </h4>                       
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+                <h3>codigo CSS </h3>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
 .cotenedor-grid {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -181,28 +209,41 @@ grid-column: 2 / 3;
     grid-column: 3/4;
 }
 }</script></code></pre>
-            <p>con <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns: 20% 60% 20%; </script></code> le estamos indicando los tamaños en pantalla que va tomar.</p>
-            <p>con<code class="language-css"><script type="text/plain" class="language-markup">  grid-auto-flow: column; </script></code> vamos evitar que los elementos se desplacen.</p>
-            <p>con los selectores <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
-            le estamos indicando al grid que tome la posición indicada por el valor del selector <code class="language-css"><script type="text/plain" class="language-markup">grid-column:;</script></code>
-            para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar.</p>
-            <img src="img/img1.png" alt="imagen de ejemplo">
-            <p>Por ejemplo con el selector <code class="language-css"><script type="text/plain" class="language-markup">  .contenido-principal{} </script></code> le 
-            estamos indicando que se posicione desde el numero 2 hasta el 3, por lo que tomaria el 60% del tamaño, algo similar pasaría con los demas selectores que deseamos posicionar.
-            </p>
-            <p>
-            por lo que finalmente tendriamos el siguiente resultado, aplicando las posiciones.
-            </p>
-            <img src="img/img2.png" alt="">
+                <p>con <code
+                        class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns: 20% 60% 20%; </script></code>
+                    le estamos indicando los tamaños en pantalla que va tomar.</p>
+                <p>con<code
+                        class="language-css"><script type="text/plain" class="language-markup">  grid-auto-flow: column; </script></code>
+                    vamos evitar que los elementos se desplacen.</p>
+                <p>con los selectores <code
+                        class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
+                    le estamos indicando al grid que tome la posición indicada por el valor del selector <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-column:;</script></code>
+                    para entender un poco mejor el posicionamiento podemos visualizarlo con el inspeccionar.</p>
+                <img src="img/img1.png" alt="imagen de ejemplo">
+                <p>Por ejemplo con el selector <code
+                        class="language-css"><script type="text/plain" class="language-markup">  .contenido-principal{} </script></code>
+                    le
+                    estamos indicando que se posicione desde el numero 2 hasta el 3, por lo que tomaria el 60% del
+                    tamaño, algo similar pasaría con los demas selectores que deseamos posicionar.
+                </p>
+                <p>
+                    por lo que finalmente tendriamos el siguiente resultado, aplicando las posiciones.
+                </p>
+                <img src="img/img2.png" alt="">
 
-            <h4>Alternativa</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">{
+                <h3>Alternativa</h3>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">{
 grid-template-columns: 1fr 3fr 1fr;
 }</script></code></pre>
-            <p>Por cada pixel que reciben los <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code> toma el tamaño dado por los fracciones de <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code></p>
-          
-            <h4>Una alternativa más avanzada</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+                <p>Por cada pixel que reciben los <code
+                        class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} .sidebar-1{} .sidebar-2{}</script></code>
+                    toma el tamaño dado por los fracciones de <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code>
+                </p>
+
+                <h3>Una alternativa más avanzada</h3>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
 .cotenedor-grid {
 display: grid; 
 grid-template-areas: "izquierda contenido derecha"; /*  */
@@ -221,49 +262,57 @@ grid-area: derecha;
 }
 }</script></code></pre>
 
-            <p>  <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-areas:</script></code>crea unas tipo variables que van a corresponder a los tamaños dados por <code class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code> recursivamente.</p>
-            <p>y simplemente al selector se la da la propiedad de <code class="language-css"><script type="text/plain" class="language-markup">grid-area: contenido </script></code> para poder utilizarla</p>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/05-3columnas_css_grid/index.html" target="blank_">Ejemplo</a>
-            </div> 
-        <div><!-- seccion -->
-    </section> <!-- FIN TRES COLUMNAS (UNO MAS GRANDE) -->
+                <p> <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-templates-areas:</script></code>crea
+                    unas tipo variables que van a corresponder a los tamaños dados por <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-templates-columns:</script></code>
+                    recursivamente.</p>
+                <p>y simplemente al selector se la da la propiedad de <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-area: contenido </script></code>
+                    para poder utilizarla</p>
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/05-3columnas_css_grid/index.html" target="blank_">Ejemplo</a>
+                </div>
+                <div><!-- seccion -->
+        </section> <!-- FIN TRES COLUMNAS (UNO MAS GRANDE) -->
 
-<section><!-- C O L U M N  D R O P -->
-    <div class="seccion__contenido">
-        <h3>Column drop</h3>
-        <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible</p>
-        <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
+        <section><!-- C O L U M N  D R O P -->
+            <div class="seccion__contenido">
+                <h2>Column drop</h2>
+                <div class="separador"></div>
+                <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible</p>
+                <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
 
-        <div class=" grid--1 grid__padre">
-            <div class="grid__hijo--1">
-                <p>Primer Columna</p>
-            </div>
-            <div class="grid__hijo--2">
-                <p>Segunda Columna</p>
-            </div>
-            <div class="grid__hijo--1">
-                <p>Tercera Columna</p>
-            </div>
-        </div>
-        <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían recolocando, se adapataría para obtener algo como lo siguiente:</p>
-        <div class="grid--2">
-            <div class="grid__hijo--3">
-                <p>Primer Columna</p>
-            </div>
-            <div class="grid__hijo--4">
-                <p>Segunda Columna</p>
-            </div>
-            <div class="grid__hijo--5">
-                <p>Tercera Columna</p>
-            </div>  
-        </div>
+                <div class=" grid--1 grid__padre">
+                    <div class="grid__hijo--1">
+                        <p>Primer Columna</p>
+                    </div>
+                    <div class="grid__hijo--2">
+                        <p>Segunda Columna</p>
+                    </div>
+                    <div class="grid__hijo--1">
+                        <p>Tercera Columna</p>
+                    </div>
+                </div>
+                <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían
+                    recolocando, se adapataría para obtener algo como lo siguiente:</p>
+                <div class="grid--2">
+                    <div class="grid__hijo--3">
+                        <p>Primer Columna</p>
+                    </div>
+                    <div class="grid__hijo--4">
+                        <p>Segunda Columna</p>
+                    </div>
+                    <div class="grid__hijo--5">
+                        <p>Tercera Columna</p>
+                    </div>
+                </div>
 
-        <p>podríamos cambiar totalmente la distribución</p>
-        <p>veamos un ejemplo</p>
+                <p>podríamos cambiar totalmente la distribución</p>
+                <p>veamos un ejemplo</p>
 
-        <h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor column-drop"> /* Padre */
+                <h4>Codigo HTML</h4>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor column-drop"> /* Padre */
 <main class="primera"> /* hijo */
     <h1>Column Drop (primera columna)</h1>
     <p>
@@ -281,12 +330,14 @@ grid-area: derecha;
 </aside>
 </div> </script></code></pre>
 
-<h4>Codigo CSS</h4>
+                <h4>Codigo CSS</h4>
 
-<p>Con la siguiente media querie le estamos indicando que a dispotivos mayores de 480px tome la distibución de 2 columnas, pero como son 3 elementos va crear automaticamente 
-una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1 hasta el 3, para que los siguiente dos espacios los rellene con los demas elementos. 
-</p>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
+                <p>Con la siguiente media querie le estamos indicando que a dispotivos mayores de 480px tome la
+                    distibución de 2 columnas, pero como son 3 elementos va crear automaticamente
+                    una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1 hasta el 3, para
+                    que los siguiente dos espacios los rellene con los demas elementos.
+                </p>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
 .column-drop{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -297,11 +348,11 @@ una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1
 }
 }</script></code></pre>
 
-<p>Obtendríamos algo como esto:</p>
-<img src="img/img3.png" alt="imagen de prueba">
+                <p>Obtendríamos algo como esto:</p>
+                <img src="img/img3.png" alt="imagen de prueba">
 
-            <P>Aplicando otra distribución a dispositivos mayores a 768px.</P>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+                <P>Aplicando otra distribución a dispositivos mayores a 768px.</P>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
     .column-drop{
         grid-template-columns: repeat(3, 1fr);
         grid-auto-flow: column;
@@ -311,23 +362,26 @@ una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1
     }
 }</script></code></pre>
 
- <p>Le estamos indicando que el contenido primera se posicione de la columna de la 3/4 , y utilizamos grid-auto-flow: column; para que
-     no haya desbordamiento de contenido </p>
-<p>Se puede llevar mas complicado el reposicionamiento de columna gracias a CSS Grid, inspecciona el siguiete ejemplo:</p>
-        <div class="seccion__explicacion"> 
-            <a class="boton" href="patrones/07-column_drop_css_grid/index.html" target="blank_">Ejemplo</a>
-        </div> <!-- seccion -->
-        </div>
-    </section><!-- F I N  C O L U M N  D R O P -->
+                <p>Le estamos indicando que el contenido primera se posicione de la columna de la 3/4 , y utilizamos
+                    grid-auto-flow: column; para que
+                    no haya desbordamiento de contenido </p>
+                <p>Se puede llevar mas complicado el reposicionamiento de columna gracias a CSS Grid, inspecciona el
+                    siguiete ejemplo:</p>
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/07-column_drop_css_grid/index.html" target="blank_">Ejemplo</a>
+                </div> <!-- seccion -->
+            </div>
+        </section><!-- F I N  C O L U M N  D R O P -->
 
-<section><!-- I N I C I O  DE  S I D E  B A R   -->
-    <div class="seccion__contenido">
-        <h3>Side Bar</h3>
+        <section><!-- I N I C I O  DE  S I D E  B A R   -->
+            <div class="seccion__contenido">
+                <h3>Side Bar</h3>
 
-        <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas grande y una barra lateral de menor tamaño</p>
-        
-        <h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
+                <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas
+                    grande y una barra lateral de menor tamaño</p>
+
+                <h4>Codigo HTML</h4>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
     <article>
         <h1>Entrada del Blog</h1>
         <img src="img/imagen1.jpg">
@@ -345,9 +399,9 @@ una fila, por lo que le indicamos que el primer elemento tome desde el espacio 1
         in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </aside>
 </div> </script></code></pre>
-        
-        <h4>Codigo CSS</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+
+                <h4>Codigo CSS</h4>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
 .con-sidebar{
 display: grid;
 grid-template-columns: 1fr 3fr;
@@ -359,13 +413,19 @@ grid-column: 1/2;
 }
 }</script></code></pre>
 
-<p>con la propidad de <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns:</script></code>le indicamos el tamaño de los elementons que va tomar segun su función</p>
-<p>con <code class="language-css"><script type="text/plain" class="language-markup">grid-aut-flow: column</script></code> le estamos indicando que acomode el contenido en los espacios vacios no declarados. </p>
-<p>AL selector aside le estamos diciendo que con la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> </script>grid-column:1/2;</code> tome el espacio de la primera columna.</p>
+                <p>con la propidad de <code
+                        class="language-css"><script type="text/plain" class="language-markup"> grid-template-columns:</script></code>le
+                    indicamos el tamaño de los elementons que va tomar segun su función</p>
+                <p>con <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-aut-flow: column</script></code>
+                    le estamos indicando que acomode el contenido en los espacios vacios no declarados. </p>
+                <p>AL selector aside le estamos diciendo que con la propiedad <code
+                        class="language-css"><script type="text/plain" class="language-markup"> </script>grid-column:1/2;</code>
+                    tome el espacio de la primera columna.</p>
 
-<h4>Alternativa</h4>
+                <h4>Alternativa</h4>
 
-<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px){
+                <pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px){
 .con-sidebar{
     display: grid;
     grid-template-columns: 1fr 3fr;
@@ -377,27 +437,31 @@ aside{
 }}</script></code></pre>
 
 
-<div class="seccion__explicacion"> 
-            <a class="boton" href="patrones/09-con_sidebar_css_grid/index.html">Ejemplo</a>
-        </div> <!-- seccion -->
-    </div>
-</div>
-    </section> <!-- F I N  DE  S I D E  B A R   -->
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/09-con_sidebar_css_grid/index.html">Ejemplo</a>
+                </div> <!-- seccion -->
+            </div>
+            </div>
+        </section> <!-- F I N  DE  S I D E  B A R   -->
 
-    <section> <!-- L A Y O U T  S H I F T E R  -->
-    <div class="seccion__contenido">
-        <h3>layout Shifter</h3>
-            
-        <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
-        <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en principales y viceversa</p>
-        <p>Suponiendo que tenemos un contenido ordenado:</p>
-        <img src="img/gridlayoutshifter.gif" alt="">
-        <p>Podriamos reacomodarlo como:</p>
-        <img src="img/gridlayoutshifter2.gif" alt="">
+        <section> <!-- L A Y O U T  S H I F T E R  -->
+            <div class="seccion__contenido">
+                <h3>layout Shifter</h3>
 
-        <p>Para este patron de diseño utilizamos la propiedad de <code class="language-css"><script type="text/plain" class="language-markup"> grid-template-areas:</script></code> con la que creamos areas para los contenedores, y observa como se posicionan con este simple codigo</p>
-        <img src="img/contenedores1.gif" alt="">
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px ){
+                <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
+                <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en
+                    principales y viceversa</p>
+                <p>Suponiendo que tenemos un contenido ordenado:</p>
+                <img src="img/gridlayoutshifter.gif" alt="">
+                <p>Podriamos reacomodarlo como:</p>
+                <img src="img/gridlayoutshifter2.gif" alt="">
+
+                <p>Para este patron de diseño utilizamos la propiedad de <code
+                        class="language-css"><script type="text/plain" class="language-markup"> grid-template-areas:</script></code>
+                    con la que creamos areas para los contenedores, y observa como se posicionan con este simple codigo
+                </p>
+                <img src="img/contenedores1.gif" alt="">
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px ){
 .layout-shifter{
 display: grid;
 grid-template-areas: "contenido" 
@@ -408,11 +472,15 @@ grid-template-areas: "contenido"
 grid-template-areas:"contenido sidebar" ;
 }/* </script></code></pre>
 
-<p>esto lo podemos crear facimente con template columns pero, lo que va permitir layoutshifter es utilizar estas areas con nombre y definir donde se van a colocar</p>
-<p>para definir un area, simplemente utilizamos un selector en el elemento que deseamos manipular, con la propiedad de <code class="language-css"><script type="text/plain" class="language-markup">grid-area:</script></code></p>
+                <p>esto lo podemos crear facimente con template columns pero, lo que va permitir layoutshifter es
+                    utilizar estas areas con nombre y definir donde se van a colocar</p>
+                <p>para definir un area, simplemente utilizamos un selector en el elemento que deseamos manipular, con
+                    la propiedad de <code
+                        class="language-css"><script type="text/plain" class="language-markup">grid-area:</script></code>
+                </p>
 
-<h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"> <div class="contenedor layout-shifter">
+                <h4>Codigo HTML</h4>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"> <div class="contenedor layout-shifter">
 <aside class="sidebar">
     <h1>Titulo Blog (primera columna)</h1>
     <p>
@@ -440,8 +508,10 @@ grid-template-areas:"contenido sidebar" ;
 </main>
 </div></script></code></pre>
 
-<h4>Aplicando <code class="language-css"><script type="text/plain" class="language-markup"> grid-area:</script></code> podemos indicarle a grid que posicione la primera columna en la parte inferior</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
+                <h4>Aplicando <code
+                        class="language-css"><script type="text/plain" class="language-markup"> grid-area:</script></code>
+                    podemos indicarle a grid que posicione la primera columna en la parte inferior</h4>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
     .layout-shifter{
         display: grid;
         grid-template-areas: "contenido" 
@@ -457,17 +527,21 @@ grid-template-areas:"contenido sidebar" ;
     .sidebar{
         grid-area: sidebar;
         }}</script></code></pre>
-        <p>distribución de 768px</p>
-    <img src="img/exp2.png" alt="">
-    <p>distribución de 992px</p>
-    <img src="img/exp3.png" alt="">
+                <p>distribución de 768px</p>
+                <img src="img/exp2.png" alt="">
+                <p>distribución de 992px</p>
+                <img src="img/exp3.png" alt="">
 
-    <p>en resumen en tamaños inferiores el titulo se va desplazar a la parte inferior, y en tamaños mas grandes se va a posicionar de lado derecho del contenido, layout shifter entra en acción en cada Media Querie, cambiando la ubicación de los elementos.
-        esta es la función de layout shifter, cambiar de diseño dependiendo de cada media querie.
-    </p>
+                <p>en resumen en tamaños inferiores el titulo se va desplazar a la parte inferior, y en tamaños mas
+                    grandes se va a posicionar de lado derecho del contenido, layout shifter entra en acción en cada
+                    Media Querie, cambiando la ubicación de los elementos.
+                    esta es la función de layout shifter, cambiar de diseño dependiendo de cada media querie.
+                </p>
 
-    <h4>Aplicando un sub grid en un elemento padre <code class="language-css"><script type="text/plain" class="language-markup">.contenido-prinicpal{}</script></code></h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
+                <h4>Aplicando un sub grid en un elemento padre <code
+                        class="language-css"><script type="text/plain" class="language-markup">.contenido-prinicpal{}</script></code>
+                </h4>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup"> @media (min-width: 768px ){
     .layout-shifter{
         display: grid;
         grid-template-areas: "contenido" 
@@ -499,23 +573,28 @@ grid-template-areas:"contenido sidebar" ;
     }
 }</script></code></pre>
 
-<p>El subgrid se va aplicar para los elementos que se encuentran dentro del selector, va crear dos areas para cada entrada de blog,  asigando una fracción de espacio, con una separación de 3rem, en la primera media querie.</p>
-<p>En la segunda media querie vamos a retirar la asignación de columnas, para posicionar las entradas una debajo de la otra.</p>
+                <p>El subgrid se va aplicar para los elementos que se encuentran dentro del selector, va crear dos areas
+                    para cada entrada de blog, asigando una fracción de espacio, con una separación de 3rem, en la
+                    primera media querie.</p>
+                <p>En la segunda media querie vamos a retirar la asignación de columnas, para posicionar las entradas
+                    una debajo de la otra.</p>
 
-        <div class="seccion__explicacion"> 
-            <a class="boton" href="patrones/11-layout_shifter_css_grid/index.html">Ejemplo</a>  </div>
-        </div> <!-- seccion -->
-    </section> <!-- F I N  L A Y O U T  S H I F T E R  -->
-</section>
-</section>
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/11-layout_shifter_css_grid/index.html">Ejemplo</a>
+                </div>
+            </div> <!-- seccion -->
+        </section> <!-- F I N  L A Y O U T  S H I F T E R  -->
+    </>
+    </section>
 
     <footer>
         <div class="pie__contenido">
-           <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
+            <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
         </div>
     </footer>
 
 
     <script src="js/prism.js"></script>
 </body>
+
 </html>

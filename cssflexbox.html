@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,29 +10,45 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="css/prism.css" rel="stylesheet" />
 </head>
+
 <body>
-    
-    <section>
+
+    <header>
         <h1 class="prinicpal__titulo">CSS Flexbox</h1>
-    </section>
+    </header>
 
     <section class="seccion">
-       
-            <h2 class="seccion__titulo">Qué es css Flexbox</h2>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae ea quam obcaecati eligendi. Dolorum culpa et a similique illo cumque quibusdam repellendus dolorem debitis. Quis magni ex autem sint error atque mollitia nostrum non architecto aliquam minima inventore saepe similique cumque, nesciunt eaque eos unde dolores fugiat. Consequuntur, nostrum accusamus porro nobis ab quas libero atque provident, facilis, in id cum dicta ut doloremque eius qui! Distinctio quaerat eius doloribus excepturi dolorem dignissimos reiciendis facere natus? Quia perspiciatis quod velit ducimus tempore, voluptate accusantium autem impedit qui sed maiores quaerat voluptas. Totam qui commodi hic fugit aperiam voluptatibus neque accusantium.
-                </p>
-                <p>
-                   Patrones de diseño para Responsive Web Desing
-                </p>
+        <h1 class="seccion__titulo">Qué es css Flexbox</h1>
+        <div>
+            <p>
+                Flexbox es un modelo de diseño de página que permite organizar elementos en una página web de forma eficiente y consistente
+            </p>
+            <ul>
+                <li>Permite alinear elementos de diferentes tamaños en filas o columnas</li>
+                <li>Optimiza el espacio del contenedor</li>
+                <li>Es especialmente útil para diseños responsivos</li>
+                <li>Simplifica la tarea de implementar reglas y estilos CSS</li>
+            </ul>
+        </div>
+    </section>
 
+    <nav class="indice seccion">
+        <a href="index.html" class="indice__elemento ">Inicio</a>
+        <a href="cssgrid.html" class="indice__elemento">CSS Grid</a>
+        <a href="cssflexbox.html" class="indice__elemento indice__elemento--activo">CSS Flexbox</a>
+        <a href="mostlyfluid.html" class="indice__elemento">Mostly Fluid</a>
+        <a href="tinytweaks.html" class="indice__elemento">Tiny Tweaks</a>
+    </nav>
+
+    <section class="seccion">
         <div class="seccion_contenido">
-            <h3>Dos Columnas Iguales</h3>
+            <h2>Dos Columnas Iguales</h2>
+            <div class="separador"></div>
             <p>para lograr dos columnas con flexblox, se realiza el siguiente procedimiento.</p>
             <p>El codigo se debe de implementar desde el elemento padre, por ejemplo:</p>
 
-            <h4>Codigo en HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
+            <h3>Codigo en HTML</h3>
+            <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor .dos-columnas"> <!-- Este es el elemento padre -->
     <article class="entrada-blog"> 
         <h1>Titulo Entrada Blog</h1>
         <img src="img/imagen1.jpg">
@@ -47,11 +64,11 @@
 </div></script></code></pre>
 
 
-    <h4>
-        codigo CSS
-    </h4>
+            <h3>
+                codigo CSS
+            </h3>
 
-    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+            <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
         .dos-columnas{
             display: flex; /* Da acceso a todas las propiedades de flexbox */
             justify-content: space-between;
@@ -61,29 +78,41 @@
             flex-basis: calc(50% - 1rem); /* toma el 50% menos un espacio de rem */
         }
     }</script></code></pre>
-    <p>El elemento <code class="language-css"><script type="text/plain" class="language-markup"> display: flex;</script></code> muestra por default todos los elementos de izquierda a derecha</p>
+            <p>El elemento <code
+                    class="language-css"><script type="text/plain" class="language-markup"> display: flex;</script></code>
+                muestra por default todos los elementos de izquierda a derecha</p>
 
-    <p>con el elemento <code class="language-css"><script type="text/plain" class="language-markup">justify-content: ;</script></code> permite distribuir el contenido horizontalmente. </p>
+            <p>con el elemento <code
+                    class="language-css"><script type="text/plain" class="language-markup">justify-content: ;</script></code>
+                permite distribuir el contenido horizontalmente. </p>
 
-        <p>con el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> le indicamos el tamaño y la separación que va tomar. </p>
+            <p>con el elemento <code
+                    class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code>
+                le indicamos el tamaño y la separación que va tomar. </p>
 
-        <p>una alternativa es utiliar el elemento <code class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 calc(50% - 1rem); </script></code></p>
-      
-        <p>O se puede utilizar <code class="language-css"><script type="text/plain" class="language-markup"> gap: 1rem;</script></code>directamente en el elemento padre, pero la desventaje es que no tiene soporte en todos los navegadores, al ser mas nueva.</p>
+            <p>una alternativa es utiliar el elemento <code
+                    class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 calc(50% - 1rem); </script></code>
+            </p>
+
+            <p>O se puede utilizar <code
+                    class="language-css"><script type="text/plain" class="language-markup"> gap: 1rem;</script></code>directamente
+                en el elemento padre, pero la desventaje es que no tiene soporte en todos los navegadores, al ser mas
+                nueva.</p>
 
 
 
 
-            <div class="seccion__explicacion"> 
+            <div class="seccion__explicacion">
                 <a class="boton" href="patrones/02-2columnas_iguales_flexbox/index.html">Ejemplo</a>
             </div> <!-- seccion -->
-        <div class="seccion__contenido">
+            <div class="seccion__contenido">
 
-            <h3>Tres Columnas Iguales</h3>
-            <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
+                <h2>Tres Columnas Iguales</h2>
+                <div class="separador"></div>
+                <p>Este ejemplo es similar al anterior, entonces aplicando lo anterior tenemos que:</p>
 
-            <h4>Codigo en HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
+                <h3>Codigo en HTML</h3>
+                <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor tres-columnas"> <!-- Elemento padre -->
 <article class="entrada-blog">
     <h1>Titulo Entrada Blog</h1>
     <img src="img/imagen1.jpg">
@@ -104,12 +133,12 @@
     <a href="#">Leer más</a>
 </article>
 </div></script></code></pre>
-            
-                <h4>
+
+                <h3>
                     codigo CSS
-                </h4>
-            
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+                </h3>
+
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
     .tres-columnas{
         display: flex; 
         justify-content: space-between;
@@ -119,25 +148,27 @@
     }
 }</script></code></pre>
 
-<h4>Alternativa</h4>
+                <h3>Alternativa</h3>
 
-<p>el elemeneto <code class="language-css"><script type="text/plain" class="language-markup"> gap:</script></code>  nos ahorra codigo, pero al no tener un soporte total, utilizamos el codigo anterior</p>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
+                <p>el elemeneto <code
+                        class="language-css"><script type="text/plain" class="language-markup"> gap:</script></code> nos
+                    ahorra codigo, pero al no tener un soporte total, utilizamos el codigo anterior</p>
+                <pre><code class="language-css"><script type="text/plain" class="language-markup">@media(min-width:768px){
     .tres-columnas{
         display: flex; 
         gap: 3rem;
     }
 }</script></code></pre>
 
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/04-3columnas_iguales_flexbox/index.html" target="_blank">Ejemplo</a>
-            </div> <!-- seccion -->
-<section> <!-- FLEXBOX T R E S  C O L U M N A S  I G U A L E S -->
-        <div class="seccion__contenido">
-            <h3>Tres Columnas Iguales (uno mas grande)</h3>
-            <p>Con FlexBox podemos lograr columnas de tamaños diferentes </p>
-<h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor contenedor-flex"> <!-- Contenedor padre  -->
+                <div class="seccion__explicacion">
+                    <a class="boton" href="patrones/04-3columnas_iguales_flexbox/index.html" target="_blank">Ejemplo</a>
+                </div> <!-- seccion -->
+                <section> <!-- FLEXBOX T R E S  C O L U M N A S  I G U A L E S -->
+                    <div class="seccion__contenido">
+                        <h3>Tres Columnas Iguales (uno mas grande)</h3>
+                        <p>Con FlexBox podemos lograr columnas de tamaños diferentes </p>
+                        <h4>Codigo HTML</h4>
+                        <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor contenedor-flex"> <!-- Contenedor padre  -->
     <main >
         <article class="contenido-principal"> <!--  Contenedor Hijo -->
             <h1>Entrada del Blog</h1>
@@ -161,8 +192,8 @@
         </p>
         </aside>
 </div></script></code></pre>
-<h4>Codigo CSS</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup"> @media(min-width:768px){
+                        <h4>Codigo CSS</h4>
+                        <pre><code class="language-css"><script type="text/plain" class="language-markup"> @media(min-width:768px){
     .contenedor-flex{
 display: flex;
 justify-content: space-between;
@@ -177,48 +208,62 @@ justify-content: space-between;
         order:-1;
     }
 }</script></code></pre>
-            <p>Al Hijo principal <code class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code> le estamos indicando que tome la mayor cantidad de espacio en pantalla y le reste un 1rem para la separación con el valor la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:calc (60%-1rem) </script></code> </p>
-            <p>Y con el selector <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code> le estamos indicando que tome un tamaño menor en pantalla, por cada hijo al que le asignamos este selector </p>
-            <p>Con el selector especifico <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar-1{}</script></code> le estamos diciendo que con la propiedad <code class="language-css"><script type="text/plain" class="language-markup"> order:-1;</script></code>tome la primera columna en el espacio en pantalla</p>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/06-3columnas_flexbox/index.html">Ejemplo</a>
-            </div> <!-- seccion -->
-        </section>
-            
-        <div class="seccion__contenido">
-            <h3>Column drop</h3>
+                        <p>Al Hijo principal <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code>
+                            le estamos indicando que tome la mayor cantidad de espacio en pantalla y le reste un 1rem
+                            para la separación con el valor la propiedad <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex-basis:calc (60%-1rem) </script></code>
+                        </p>
+                        <p>Y con el selector <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code>
+                            le estamos indicando que tome un tamaño menor en pantalla, por cada hijo al que le asignamos
+                            este selector </p>
+                        <p>Con el selector especifico <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .sidebar-1{}</script></code>
+                            le estamos diciendo que con la propiedad <code
+                                class="language-css"><script type="text/plain" class="language-markup"> order:-1;</script></code>tome
+                            la primera columna en el espacio en pantalla</p>
+                        <div class="seccion__explicacion">
+                            <a class="boton" href="patrones/06-3columnas_flexbox/index.html">Ejemplo</a>
+                        </div> <!-- seccion -->
+                </section>
 
-            <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible</p>
-            <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
+                <div class="seccion__contenido">
+                    <h3>Column drop</h3>
 
-            
-        <div class=" flex__padre">
-            <div class="flex__hijo--1">
-                <p>Primer Columna</p>
-            </div>
-            <div class="flex__hijo--2">
-                <p>Segunda Columna</p>
-            </div>
-            <div class="flex__hijo--1">
-                <p>Tercera Columna</p>
-            </div>
-        </div>
-        <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían recolocando, se adapataría para obtener algo como lo siguiente:</p>
-        <div class=" flex--1 flex__padre">
-            <div class="flex__hijo--1">
-                <p>Primer Columna</p>
-            </div>
-            <div class="flex__hijo--2">
-                <p>Segunda Columna</p>
-            </div>
-            <div class="flex__hijo--1">
-                <p>Tercera Columna</p>
-            </div>  
-        </div>
+                    <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible
+                    </p>
+                    <p>Suponiendo que tenemos el espacio de un disposito pequeño tenemos la siguiente distribución:</p>
 
-        <h4>Codigo HTML</h4>
 
-<pre><code class="language-html"><script type="text/plain" class="language-markup">     <div class="contenedor column-drop-flex">
+                    <div class=" flex__padre">
+                        <div class="flex__hijo--1">
+                            <p>Primer Columna</p>
+                        </div>
+                        <div class="flex__hijo--2">
+                            <p>Segunda Columna</p>
+                        </div>
+                        <div class="flex__hijo--1">
+                            <p>Tercera Columna</p>
+                        </div>
+                    </div>
+                    <p>Pero si tuvieramos más espacio disponible, suponiendo una computadora, las columnas se irían
+                        recolocando, se adapataría para obtener algo como lo siguiente:</p>
+                    <div class=" flex--1 flex__padre">
+                        <div class="flex__hijo--1">
+                            <p>Primer Columna</p>
+                        </div>
+                        <div class="flex__hijo--2">
+                            <p>Segunda Columna</p>
+                        </div>
+                        <div class="flex__hijo--1">
+                            <p>Tercera Columna</p>
+                        </div>
+                    </div>
+
+                    <h4>Codigo HTML</h4>
+
+                    <pre><code class="language-html"><script type="text/plain" class="language-markup">     <div class="contenedor column-drop-flex">
     <main class="contenido-principal">
         <h1>Column Drop (primera columna)</h1>
         <p>
@@ -242,8 +287,8 @@ justify-content: space-between;
     </aside>
 </div></script></code></pre>
 
-<h4>Codigo CSS</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
+                    <h4>Codigo CSS</h4>
+                    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
 .column-drop-flex{
     display: flex;
     justify-content: space-evenly;  /* separación de contenido */
@@ -258,20 +303,29 @@ justify-content: space-between;
     flex: 0 0 calc(33.33% - 2rem);
 }}</script></code></pre>
 
-<p>En la distribución de 480px le estamos diciendo que los dos primeros elementos tomen el 50% con <code class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code> y que el tercer elemento se recorra
-con <code class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:</script></code>ya que los dos primeros ocupan el 100% de la pantalla</p>
-<p>en la distribucón de 768px, estamos creando 3 columnas que sumando su porcentaje de el 100% con <code class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code></p>
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/08-column_drop_flexbox/index.html">Ejemplo</a>
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
+                    <p>En la distribución de 480px le estamos diciendo que los dos primeros elementos tomen el 50% con
+                        <code
+                            class="language-css"><script type="text/plain" class="language-markup"> flex-basis:</script></code>
+                        y que el tercer elemento se recorra
+                        con <code
+                            class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:</script></code>ya
+                        que los dos primeros ocupan el 100% de la pantalla</p>
+                    <p>en la distribucón de 768px, estamos creando 3 columnas que sumando su porcentaje de el 100% con
+                        <code
+                            class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code>
+                    </p>
+                    <div class="seccion__explicacion">
+                        <a class="boton" href="patrones/08-column_drop_flexbox/index.html">Ejemplo</a>
+                    </div> <!-- seccion -->
+                    <div class="seccion__contenido">
 
-            <h3>Side Bar</h3>
+                        <h3>Side Bar</h3>
 
-            <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas grande y una barra lateral de menor tamaño</p>
-            
-            <h4>Codigo HTML</h4>
-    <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
+                        <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño
+                            mas grande y una barra lateral de menor tamaño</p>
+
+                        <h4>Codigo HTML</h4>
+                        <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
         <article>
             <h1>Entrada del Blog</h1>
             <img src="img/imagen1.jpg">
@@ -289,9 +343,9 @@ con <code class="language-css"><script type="text/plain" class="language-markup"
             in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
         </aside>
     </div> </script></code></pre>
-            
-            <h4>Codigo CSS</h4>
-    <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+
+                        <h4>Codigo CSS</h4>
+                        <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
         .con-sidebar{
             display: flex;
             gap: 3rem;
@@ -304,26 +358,29 @@ con <code class="language-css"><script type="text/plain" class="language-markup"
         }
     }}</script></code></pre>
 
-    <p>con la propiedad <code class="language-css"><script type="text/plain" class="language-markup">flex:</script></code>le estamos diciendo entonces al selector que:</p>
+                        <p>con la propiedad <code
+                                class="language-css"><script type="text/plain" class="language-markup">flex:</script></code>le
+                            estamos diciendo entonces al selector que:</p>
 
-        <img src="img/exp.png" alt="">
-            <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/10-con_sidebar_flexbox/index.html">Ejemplo</a>
-            </div>
-            </div> <!-- seccion -->
+                        <img src="img/exp.png" alt="">
+                        <div class="seccion__explicacion">
+                            <a class="boton" href="patrones/10-con_sidebar_flexbox/index.html">Ejemplo</a>
+                        </div>
+                    </div> <!-- seccion -->
 
 
-        <div class="seccion__contenido">
-            <h3>layout Shifter</h3>
-            <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
-            <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en principales y viceversa</p> 
-            <p>Suponiendo que tenemos un contenido ordenado:</p>
-            <img src="img/gridlayoutshifter.gif" alt="">
-            <p>Podriamos lograr algo como:</p>
-            <img src="img/gridlayoutshifter2.gif" alt="">
+                    <div class="seccion__contenido">
+                        <h3>layout Shifter</h3>
+                        <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
+                        <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir
+                            en principales y viceversa</p>
+                        <p>Suponiendo que tenemos un contenido ordenado:</p>
+                        <img src="img/gridlayoutshifter.gif" alt="">
+                        <p>Podriamos lograr algo como:</p>
+                        <img src="img/gridlayoutshifter2.gif" alt="">
 
-            <h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup">  <div class="contenedor layout--shifter">
+                        <h4>Codigo HTML</h4>
+                        <pre><code class="language-html"><script type="text/plain" class="language-markup">  <div class="contenedor layout--shifter">
     <aside class="sidebar"> 
         <h1>Titulo Blog (primera columna)</h1>
         <p>
@@ -351,8 +408,8 @@ con <code class="language-css"><script type="text/plain" class="language-markup"
     </main>
 </div></script></code></pre>
 
-            <h4>Codigo CSS</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
+                        <h4>Codigo CSS</h4>
+                        <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
     .layout--shifter{
         display: flex;
         flex-direction: column-reverse;
@@ -385,34 +442,63 @@ con <code class="language-css"><script type="text/plain" class="language-markup"
     }
 }</script></code></pre>
 
-                <h4>Media Querie de 768px</h4>
-                <p>Visualiza como la primera columna se posiciona en la ultima al expandir la pantalla, se logra con <code class="language-css"><script type="text/plain" class="language-markup"> flex-direction:column-reverse;</script></code></p>
-                <p>A <code class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code> le creamos un subflexbox para que afecte a sus hijos directamente <code class="language-css"><script type="text/plain" class="language-markup"> .entrada-blog{}</script></code>con la cual que cada elemento este dentro de ella toma el 50% del espacio con 2rem de separación en dicha media querie </p>
-                <h4>Media Querie de 992px</h4>
-                <P>En esta distribución vamos a regresarle la dirección de posicionamiento por default a flexblox con <code class="language-css"><script type="text/plain" class="language-markup"> flex-direction:row;</script></code></P>
-                <p>Para ordenar los elementos en la posicion que deseemos podemos utilizar la propiedad de <code class="language-css"><script type="text/plain" class="language-markup"> order: 2;</script></code>en el elemento que deseamos ordenar, enetre mas alto el numero
-                se va acomodar mas al final, y entre mas bajo se acomodara primero, de acuerdo a los elementos que tengamos</p>
-                 <p>Con <code class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code>le estamos indicando el tamaño que van a tomar los contenedores <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} </script></code> tiene mas espacio en pantalla asignado
-                    con una separacion de 2 rem, a diferencia de <code class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code>que estará tomando un espacio menor</p>
-                <p>Con <code class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:wrap;</script></code> le estamos diciendo que cuando llegue al limite de espacio, se vayan colocando hacia abajo, para evitar el sobreposicionamiento ya que a los subhijos de <code class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{}</script></code>le estamos diciendo que con <code class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 100%; </script></code>tomen cada elemento el espacio total disponible, de lo contrario sin wrap se sobreposicionarian</p>
-                    <div class="seccion__explicacion"> 
-                <a class="boton" href="patrones/12-layout_shifter_flexbox/index.html">Ejemplo</a>
-            </div> <!-- seccion -->
-        <div class="seccion__contenido">
-        
+                        <h4>Media Querie de 768px</h4>
+                        <p>Visualiza como la primera columna se posiciona en la ultima al expandir la pantalla, se logra
+                            con <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex-direction:column-reverse;</script></code>
+                        </p>
+                        <p>A <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .contenido-principal{}</script></code>
+                            le creamos un subflexbox para que afecte a sus hijos directamente <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .entrada-blog{}</script></code>con
+                            la cual que cada elemento este dentro de ella toma el 50% del espacio con 2rem de separación
+                            en dicha media querie </p>
+                        <h4>Media Querie de 992px</h4>
+                        <P>En esta distribución vamos a regresarle la dirección de posicionamiento por default a
+                            flexblox con <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex-direction:row;</script></code>
+                        </P>
+                        <p>Para ordenar los elementos en la posicion que deseemos podemos utilizar la propiedad de <code
+                                class="language-css"><script type="text/plain" class="language-markup"> order: 2;</script></code>en
+                            el elemento que deseamos ordenar, enetre mas alto el numero
+                            se va acomodar mas al final, y entre mas bajo se acomodara primero, de acuerdo a los
+                            elementos que tengamos</p>
+                        <p>Con <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex:</script></code>le
+                            estamos indicando el tamaño que van a tomar los contenedores <code
+                                class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{} </script></code>
+                            tiene mas espacio en pantalla asignado
+                            con una separacion de 2 rem, a diferencia de <code
+                                class="language-css"><script type="text/plain" class="language-markup"> .sidebar{}</script></code>que
+                            estará tomando un espacio menor</p>
+                        <p>Con <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex-wrap:wrap;</script></code>
+                            le estamos diciendo que cuando llegue al limite de espacio, se vayan colocando hacia abajo,
+                            para evitar el sobreposicionamiento ya que a los subhijos de <code
+                                class="language-css"><script type="text/plain" class="language-markup">.contenido-principal{}</script></code>le
+                            estamos diciendo que con <code
+                                class="language-css"><script type="text/plain" class="language-markup"> flex: 0 0 100%; </script></code>tomen
+                            cada elemento el espacio total disponible, de lo contrario sin wrap se sobreposicionarian
+                        </p>
+                        <div class="seccion__explicacion">
+                            <a class="boton" href="patrones/12-layout_shifter_flexbox/index.html">Ejemplo</a>
+                        </div> <!-- seccion -->
+                        <div class="seccion__contenido">
 
-        </div>
-        
+
+                        </div>
+
     </section>
-    
+
 
     <footer>
         <div class="pie__contenido">
-           <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
+            <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
         </div>
     </footer>
 
 
     <script src="js/prism.js"></script>
 </body>
+
 </html>
