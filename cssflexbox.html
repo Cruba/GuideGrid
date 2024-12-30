@@ -18,8 +18,8 @@
     </header>
 
     <section class="seccion">
-        <h1 class="seccion__titulo">Qué es css Flexbox</h1>
-        <div>
+        <h1 class="seccion__titulo">¿Qué es css Flexbox?</h1>
+            <div>
             <p>
                 Flexbox es un modelo de diseño de página que permite organizar elementos en una página web de forma eficiente y consistente
             </p>
@@ -165,9 +165,10 @@
                 </div> <!-- seccion -->
                 <section> <!-- FLEXBOX T R E S  C O L U M N A S  I G U A L E S -->
                     <div class="seccion__contenido">
-                        <h3>Tres Columnas Iguales (uno mas grande)</h3>
+                        <h2>Tres Columnas Iguales (uno mas grande)</h2>
+                        <div class="separador"></div>
                         <p>Con FlexBox podemos lograr columnas de tamaños diferentes </p>
-                        <h4>Codigo HTML</h4>
+                        <h3>Codigo HTML</h3>
                         <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor contenedor-flex"> <!-- Contenedor padre  -->
     <main >
         <article class="contenido-principal"> <!--  Contenedor Hijo -->
@@ -192,7 +193,7 @@
         </p>
         </aside>
 </div></script></code></pre>
-                        <h4>Codigo CSS</h4>
+                        <h3>Codigo CSS</h3>
                         <pre><code class="language-css"><script type="text/plain" class="language-markup"> @media(min-width:768px){
     .contenedor-flex{
 display: flex;
@@ -229,7 +230,8 @@ justify-content: space-between;
                 </section>
 
                 <div class="seccion__contenido">
-                    <h3>Column drop</h3>
+                    <h2>Column drop</h2>
+                    <div class="separador"></div>
 
                     <p>También se le conoce como colocación de columnas, va cambiando de acuerdo al espacio disponible
                     </p>
@@ -261,7 +263,7 @@ justify-content: space-between;
                         </div>
                     </div>
 
-                    <h4>Codigo HTML</h4>
+                    <h3>Codigo HTML</h3>
 
                     <pre><code class="language-html"><script type="text/plain" class="language-markup">     <div class="contenedor column-drop-flex">
     <main class="contenido-principal">
@@ -287,7 +289,7 @@ justify-content: space-between;
     </aside>
 </div></script></code></pre>
 
-                    <h4>Codigo CSS</h4>
+                    <h3>Codigo CSS</h3>
                     <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 480px){
 .column-drop-flex{
     display: flex;
@@ -319,12 +321,13 @@ justify-content: space-between;
                     </div> <!-- seccion -->
                     <div class="seccion__contenido">
 
-                        <h3>Side Bar</h3>
+                        <h2>Side Bar</h2>
+                        <div class="separador"></div>
 
                         <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño
                             mas grande y una barra lateral de menor tamaño</p>
 
-                        <h4>Codigo HTML</h4>
+                        <h3>Codigo HTML</h3>
                         <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
         <article>
             <h1>Entrada del Blog</h1>
@@ -344,7 +347,7 @@ justify-content: space-between;
         </aside>
     </div> </script></code></pre>
 
-                        <h4>Codigo CSS</h4>
+                        <h3>Codigo CSS</h3>
                         <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
         .con-sidebar{
             display: flex;
@@ -370,7 +373,8 @@ justify-content: space-between;
 
 
                     <div class="seccion__contenido">
-                        <h3>layout Shifter</h3>
+                        <h2>layout Shifter</h2>
+                        <div class="separador"></div>
                         <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
                         <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir
                             en principales y viceversa</p>
@@ -379,7 +383,7 @@ justify-content: space-between;
                         <p>Podriamos lograr algo como:</p>
                         <img src="img/gridlayoutshifter2.gif" alt="">
 
-                        <h4>Codigo HTML</h4>
+                        <h3>Codigo HTML</h3>
                         <pre><code class="language-html"><script type="text/plain" class="language-markup">  <div class="contenedor layout--shifter">
     <aside class="sidebar"> 
         <h1>Titulo Blog (primera columna)</h1>
@@ -408,7 +412,7 @@ justify-content: space-between;
     </main>
 </div></script></code></pre>
 
-                        <h4>Codigo CSS</h4>
+                        <h3>Codigo CSS</h3>
                         <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
     .layout--shifter{
         display: flex;

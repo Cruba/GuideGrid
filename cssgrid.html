@@ -18,8 +18,8 @@
     </header>
 
     <section class="seccion">
-        <h1 class="seccion__titulo">Qué es css Grid</h1>
-
+        
+        <h1 class="seccion__titulo">¿Qué es css Grid?</h1>
         <div>
             <p>
                 sistema de maquetación web que permite dividir una página en una cuadrícula para posicionar sus
@@ -311,7 +311,7 @@ grid-area: derecha;
                 <p>podríamos cambiar totalmente la distribución</p>
                 <p>veamos un ejemplo</p>
 
-                <h4>Codigo HTML</h4>
+                <h3>Codigo HTML</h3>
                 <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor column-drop"> /* Padre */
 <main class="primera"> /* hijo */
     <h1>Column Drop (primera columna)</h1>
@@ -330,7 +330,7 @@ grid-area: derecha;
 </aside>
 </div> </script></code></pre>
 
-                <h4>Codigo CSS</h4>
+                <h3>Codigo CSS</h3>
 
                 <p>Con la siguiente media querie le estamos indicando que a dispotivos mayores de 480px tome la
                     distibución de 2 columnas, pero como son 3 elementos va crear automaticamente
@@ -375,12 +375,12 @@ grid-area: derecha;
 
         <section><!-- I N I C I O  DE  S I D E  B A R   -->
             <div class="seccion__contenido">
-                <h3>Side Bar</h3>
-
+                <h2>Side Bar</h2>
+                <div class="separador"></div>
                 <p>Sidebar es mayormente utilizado en blogs, o tiendas virtuales, cuenta con area con un tamaño mas
                     grande y una barra lateral de menor tamaño</p>
 
-                <h4>Codigo HTML</h4>
+                <h3>Codigo HTML</h3>
                 <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor con-sidebar">
     <article>
         <h1>Entrada del Blog</h1>
@@ -400,7 +400,7 @@ grid-area: derecha;
     </aside>
 </div> </script></code></pre>
 
-                <h4>Codigo CSS</h4>
+                <h3>Codigo CSS</h3>
                 <pre><code class="language-css"><script type="text/plain" class="language-markup">@media (min-width: 768px){
 .con-sidebar{
 display: grid;
@@ -446,7 +446,8 @@ aside{
 
         <section> <!-- L A Y O U T  S H I F T E R  -->
             <div class="seccion__contenido">
-                <h3>layout Shifter</h3>
+                <h2>layout Shifter</h2>
+                <div class="separador"></div>
 
                 <p>Puede cambiar su orden y la ubicación de todos los elementos </p>
                 <p>Se puede traducir como cambio de diseño, ya que los elementos secundarios los puede convertir en
@@ -479,7 +480,7 @@ grid-template-areas:"contenido sidebar" ;
                         class="language-css"><script type="text/plain" class="language-markup">grid-area:</script></code>
                 </p>
 
-                <h4>Codigo HTML</h4>
+                <h3>Codigo HTML</h3>
                 <pre><code class="language-html"><script type="text/plain" class="language-markup"> <div class="contenedor layout-shifter">
 <aside class="sidebar">
     <h1>Titulo Blog (primera columna)</h1>
@@ -587,14 +588,15 @@ grid-template-areas:"contenido sidebar" ;
     </>
     </section>
 
+
+
+    <script src="js/prism.js"></script>
+    </main> 
     <footer>
         <div class="pie__contenido">
             <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
         </div>
     </footer>
-
-
-    <script src="js/prism.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,32 +10,55 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="css/prism.css" rel="stylesheet" />
 </head>
+
 <body>
-    
+
     <section>
         <h1 class="prinicpal__titulo">Mostly Fluid</h1>
     </section>
 
+    <div class="seccion">
+        <h1 class="seccion__titulo">¿Qué es css Mostly Fluid?</h1>
+        <p> Este es el patron de diseño mas sencillo, el contenido fluye por el espacio disponible, variando entre
+            espacios de los margenes de la izquierda y derecha </p>
+    </div>
+
+    <nav class="indice seccion">
+        <a href="index.html" class="indice__elemento ">Inicio</a>
+        <a href="cssgrid.html" class="indice__elemento ">CSS Grid</a>
+        <a href="cssflexbox.html" class="indice__elemento">CSS Flexbox</a>
+        <a href="mostlyfluid.html" class="indice__elemento indice__elemento--activo">Mostly Fluid</a>
+        <a href="tinytweaks.html" class="indice__elemento">Tiny Tweaks</a>
+    </nav>
+
     <section class="seccion">
-       
+
         <div class="seccion__contenido">
-            <h2 class="seccion__titulo">Qué es css Mostly Fluid</h2>
-                <p> Este es el patron de diseño mas sencillo, el contenido fluye por el espacio disponible, variando entre espacios de los margenes de la izquierda y derecha </p>
-                <p>
-                    simplemente a los contenedores les asignamos un ancho con un <code class="language-css"><script type="text/plain" class="language-markup">width: 95%;</script></code>
-                    para que tome el porcentaje total de pantalla que deseemos, es recomendable hacerlo con porcentajes, ya que con Px o Rem va existir un desbordamiento de contenido para los diferentes dispositivos.
-                </p>
-                <p>Para que tenga una mejor presentación aplicamos un max-width, para que tenga un tope, osea el maximo <code class="language-css"><script type="text/plain" class="language-markup"> max-width: 120rem</script></code></p>
-                <p>Utilizamos un <code class="language-css"><script type="text/plain" class="language-markup"> margin: 0 auto;</script></code> para centrar el contenido </p>
-                <p>A las imagenes también les podemos aplicar un width para que simpre sean responsivas <code class="language-css"><script type="text/plain" class="language-markup"> img{max-width: 100%;} </script></code> se aplica en max-width: para que no fuerce a las imagenes mas pequeñas a tomar ese valor.</p>
 
-                <p>con esas simples lineas el contenido va empezar a fluir, entre los diferentes tamaños de pantalla.</p>
+            <p>
+                simplemente a los contenedores les asignamos un ancho con un <code
+                    class="language-css"><script type="text/plain" class="language-markup">width: 95%;</script></code>
+                para que tome el porcentaje total de pantalla que deseemos, es recomendable hacerlo con porcentajes, ya
+                que con Px o Rem va existir un desbordamiento de contenido para los diferentes dispositivos.
+            </p>
+            <p>Para que tenga una mejor presentación aplicamos un max-width, para que tenga un tope, osea el maximo
+                <code
+                    class="language-css"><script type="text/plain" class="language-markup"> max-width: 120rem</script></code>
+            </p>
+            <p>Utilizamos un <code
+                    class="language-css"><script type="text/plain" class="language-markup"> margin: 0 auto;</script></code>
+                para centrar el contenido </p>
+            <p>A las imagenes también les podemos aplicar un width para que simpre sean responsivas <code
+                    class="language-css"><script type="text/plain" class="language-markup"> img{max-width: 100%;} </script></code>
+                se aplica en max-width: para que no fuerce a las imagenes mas pequeñas a tomar ese valor.</p>
 
-                <img src="img/mostlyfluid.gif" alt="">
-            
-                <p>También le podemos aplicar medias queries.</p>
-                <h4>Codigo HTML</h4>
-<pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor">
+            <p>con esas simples lineas el contenido va empezar a fluir, entre los diferentes tamaños de pantalla.</p>
+
+            <img src="img/mostlyfluid.gif" alt="">
+
+            <p>También le podemos aplicar medias queries.</p>
+            <h4>Codigo HTML</h4>
+            <pre><code class="language-html"><script type="text/plain" class="language-markup"><div class="contenedor">
     <article class="entrada-blog">
         <h1>Entrada del Blog</h1>
         <img src="img/imagen1.jpg">
@@ -46,8 +70,8 @@
             .</p>
     </article>
 </div></script></code></pre>
-                <h4>Codigo CSS</h4>
-<pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor{
+            <h4>Codigo CSS</h4>
+            <pre><code class="language-css"><script type="text/plain" class="language-markup">.contenedor{
     max-width: 1200px;
     width: 95%;
     margin: 0 auto;
@@ -65,23 +89,24 @@
 img{
     max-width: 100%;
     } </script></code></pre>
-                </div>
-        
-                <div class="seccion__explicacion"> 
-                    <a class="boton" href="patrones/13-mostly_fluid/index.html">Ejemplo</a>
-                </div> <!-- seccion -->
+        </div>
+
+        <div class="seccion__explicacion">
+            <a class="boton" href="patrones/13-mostly_fluid/index.html">Ejemplo</a>
+        </div> <!-- seccion -->
     </section>
 
 
-    
+
 
     <footer>
         <div class="pie__contenido">
-           <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
+            <p class="pie__contenido">Elaborado por <a href="crubaspace.com" class="Cruba">Cruba</a> </p>
         </div>
     </footer>
 
 
     <script src="js/prism.js"></script>
 </body>
+
 </html>
